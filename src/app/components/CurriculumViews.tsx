@@ -120,15 +120,19 @@ const CurriculumInfoButton = ({ onClick, className }: { onClick: () => void; cla
       whileTap={{ scale: 0.98 }}
       onClick={onClick}
       className={cn(
-        "flex items-center gap-2 px-6 py-3 rounded-full bg-[#94579E] border border-[#94579E] shadow-sm text-white font-bold text-[14px] hover:shadow-md hover:bg-[#834a8c] transition-all cursor-pointer group",
+        "flex items-center gap-1 md:gap-2 px-3 py-1.5 md:px-6 md:py-3 rounded-full bg-[#94579E] border border-[#94579E] shadow-sm text-white font-bold text-[11px] md:text-[14px] hover:shadow-md hover:bg-[#834a8c] transition-all cursor-pointer shrink-0 w-fit",
         className
       )}
     >
-      <BookOpen className="size-4 text-white group-hover:scale-110 transition-transform" />
-      Sobre a BCINaV
+      <BookOpen className="size-3 md:size-4 text-white group-hover:scale-110 transition-transform shrink-0" />
+      <span className="whitespace-nowrap">Sobre a BCINaV</span>
     </motion.button>
   );
 };
+
+const HEADER_OFFSET = 88; // altura aproximada do header (sticky)
+// Margem extra para o início do texto ficar visível no topo (evita corte) + ~10% a mais
+const CONTENT_TOP_EXTRA = 172;
 
 export const CurriculumLibraryView: React.FC<CurriculumLibraryViewProps> = ({ data, stage, onStageChange }) => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -137,6 +141,9 @@ export const CurriculumLibraryView: React.FC<CurriculumLibraryViewProps> = ({ da
   const [isInfoModalOpen, setIsInfoModalOpen] = useState(false);
   const [isFilterDrawerOpen, setIsFilterDrawerOpen] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const filtersBlockRef = React.useRef<HTMLDivElement>(null);
+  const contentBlockRef = React.useRef<HTMLDivElement>(null);
+  const shouldScrollToContentRef = React.useRef(false);
 
   useEffect(() => {
     setSearchQuery('');
@@ -144,16 +151,37 @@ export const CurriculumLibraryView: React.FC<CurriculumLibraryViewProps> = ({ da
     setActiveYear('Todos');
   }, [stage]);
 
-  const scrollToTopSmooth = () => {
+  const scrollToContentStart = () => {
     if (typeof window === 'undefined') return;
-    // Scroll suave um pouco acima dos filtros de eixos,
-    // para que o conteúdo novo apareça logo abaixo.
-    window.scrollTo({ top: 200, behavior: 'smooth' });
+    shouldScrollToContentRef.current = true;
   };
+
+  // Roda após o conteúdo filtrado estar na tela; scroll com offset para o texto não ficar cortado
+  useEffect(() => {
+    if (!shouldScrollToContentRef.current) return;
+    shouldScrollToContentRef.current = false;
+    const id = setTimeout(() => {
+      const contentEl = contentBlockRef.current;
+      const filtersEl = filtersBlockRef.current;
+      const targetFromTop = HEADER_OFFSET + CONTENT_TOP_EXTRA;
+      if (contentEl) {
+        const rect = contentEl.getBoundingClientRect();
+        const top = rect.top + window.scrollY - targetFromTop;
+        window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+      } else if (filtersEl) {
+        const rect = filtersEl.getBoundingClientRect();
+        const top = rect.top + window.scrollY - targetFromTop;
+        window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+      } else {
+        window.scrollTo({ top: Math.max(0, 200 - targetFromTop), behavior: 'smooth' });
+      }
+    }, 80);
+    return () => clearTimeout(id);
+  }, [activeAxis]);
 
   const handleAxisChange = (axis: string) => {
     setActiveAxis(axis);
-    scrollToTopSmooth();
+    scrollToContentStart();
   };
 
   useEffect(() => {
@@ -615,13 +643,13 @@ export const CurriculumLibraryView: React.FC<CurriculumLibraryViewProps> = ({ da
           )}
 
           <div className="flex-1 min-w-0 w-full max-w-[1100px] mx-auto">
-            {activeAxis === 'Todos' && activeYear === 'Todos' && !searchQuery && data.hero && (
+            {activeYear === 'Todos' && !searchQuery && data.hero && (
               stage === 'general' ? (
                 <div className="mb-8 lg:mb-12 w-full">
                   <Hero>
                     <CurriculumInfoButton 
                       onClick={() => setIsInfoModalOpen(true)}
-                      className="shadow-xl border-white hover:border-[#E7609F]/50 scale-90 lg:scale-100" 
+                      className="shadow-xl border-white hover:border-[#E7609F]/50" 
                     />
                   </Hero>
                 </div>
@@ -655,7 +683,7 @@ export const CurriculumLibraryView: React.FC<CurriculumLibraryViewProps> = ({ da
               )
             )}
 
-            <div className="sticky top-0 z-20 pb-4 lg:pb-8 mb-4">
+            <div ref={filtersBlockRef} className="sticky top-0 z-20 pb-4 lg:pb-8 mb-4">
                <div className="absolute inset-x-0 top-0 h-full bg-[#EAE5F9]/80 backdrop-blur-md pointer-events-none" />
                <div className="relative pt-2 space-y-4 lg:space-y-6">
                  <div className="flex items-center justify-between gap-4">
@@ -756,7 +784,7 @@ export const CurriculumLibraryView: React.FC<CurriculumLibraryViewProps> = ({ da
                </div>
             </div>
 
-            <div className="pb-20 lg:pb-32">
+            <div ref={contentBlockRef} className="pb-20 lg:pb-32">
               {filteredSections.length > 0 ? (
                 filteredSections.map((section: any, idx: number) => {
                   const isFirstDetailed = section.type === 'detailed' && idx === 0;

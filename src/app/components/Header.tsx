@@ -119,6 +119,19 @@ export const Header: React.FC<HeaderProps> = ({ activePage, setActivePage, onOpe
                     <ChevronRight className={cn("size-4", activePage === s.id ? "text-white" : "text-zinc-300")} />
                   </button>
                 ))}
+                {onOpenExportModal && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      onOpenExportModal();
+                      setIsMenuOpen(false);
+                    }}
+                    className="w-full flex items-center justify-center gap-2 p-4 rounded-2xl text-[14px] font-bold bg-[#4C76BA] text-white hover:bg-[#3b5d94] transition-all mt-4"
+                  >
+                    <Download className="size-5" />
+                    Exportar PDF
+                  </button>
+                )}
               </div>
               <div className="p-8 border-t border-zinc-100 bg-zinc-50/50">
                 <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#1B2C49]/30">BCINaV • Plataforma Curricular</span>
