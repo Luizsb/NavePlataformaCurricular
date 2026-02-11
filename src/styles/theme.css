@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Brand Colors */
+  --brand-pink: #E7609F;
+  --brand-purple: #94579E;
+  --brand-blue: #4C76BA;
+  
+  --brand-pink-light: #F6B9D4;
+  --brand-purple-light: #D4AED1;
+  --brand-blue-light: #A8C2E5;
+  
+  --brand-purple-dark: #3D1D3D;
+  --brand-pink-dark: #5E223C;
+  --brand-blue-dark: #1B2C49;
+
+  --background: #ffffff;
+  --foreground: #1B2C49; /* High contrast Dark Blue */
+  
+  --font-sans: 'Sora', ui-sans-serif, system-ui;
+}
+
+@theme inline {
+  --font-sans: var(--font-sans);
+  --color-brand-pink: var(--brand-pink);
+  --color-brand-purple: var(--brand-purple);
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-pink-light: var(--brand-pink-light);
+  --color-brand-purple-light: var(--brand-purple-light);
+  --color-brand-blue-light: var(--brand-blue-light);
+  --color-brand-pink-dark: var(--brand-pink-dark);
+  --color-brand-purple-dark: var(--brand-purple-dark);
+  --color-brand-blue-dark: var(--brand-blue-dark);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+@layer base {
+  * {
+    @apply border-zinc-200;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1.2;
+    font-family: var(--font-sans);
+    color: var(--brand-blue-dark);
+  }
+
+  h2 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.3;
+    font-family: var(--font-sans);
+    color: var(--brand-purple-dark);
+  }
+
+  h3 {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4;
+    font-family: var(--font-sans);
+    color: var(--brand-blue-dark);
+  }
+
+  p, span, li, label, button, input {
+    font-size: 16px;
+    line-height: 1.6;
+    font-family: var(--font-sans);
+  }
+}
