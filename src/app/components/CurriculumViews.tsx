@@ -467,16 +467,18 @@ export const CurriculumLibraryView: React.FC<CurriculumLibraryViewProps> = ({ da
   };
 
   const GeneralCompetencies = () => {
-    const competencies = [
-      { title: "Criatividade, Inventividade e Experimentação", description: "Capacidade de imaginar, experimentar e criar soluções originais para problemas reais, por meio da experimentação e prototipagem prática." },
-      { title: "Pensamento complexo, científico, artístico e sistêmico", description: "Domínio funcional e criativo de tecnologias digitais, eletrônicas e de fabricação analógica e digital." },
-      { title: "Ciência, Investigação e Criticidade", description: "Capacidade de investigar, formular hipóteses, experimentar e validar conclusões de forma crítica." },
-      { title: "Colaboração e Intercultura", description: "Habilidade de trabalhar com outras pessoas, respeitando saberes diversos e contextos culturais, valorizando a diversidade." },
-      { title: "Comunicação e Narração", description: "Comunicação do seu processo de aprendizagem e resultados de forma clara." },
-      { title: "Empreendedorismo e Protagonismo", description: "Capacidade de agir com autonomia, transformar ideias em ação e gerar valor empreendedor para si e para a comunidade." },
-      { title: "Ética e Cidadania", description: "Consciência sobre o impacto social, ético e ambiental das tecnologias e das próprias criações e uso consciente das aplicações, por meio da curiosidade e senso de conexão com o mundo que o cerca." },
-      { title: "Reflexão e Autonomia", description: "Habilidade de aprender a aprender — refletir sobre o próprio processo e ajustar estratégias." },
-    ];
+    const competencies = (data.generalCompetencies && Array.isArray(data.generalCompetencies) && data.generalCompetencies.length > 0)
+      ? data.generalCompetencies
+      : [
+          { title: "Criatividade, Inventividade e Experimentação", description: "Capacidade de imaginar, experimentar e criar soluções originais para problemas reais, por meio da experimentação e prototipagem prática." },
+          { title: "Pensamento complexo, científico, artístico e sistêmico", description: "Domínio funcional e criativo de tecnologias digitais, eletrônicas e de fabricação analógica e digital." },
+          { title: "Ciência, Investigação e Criticidade", description: "Capacidade de investigar, formular hipóteses, experimentar e validar conclusões de forma crítica." },
+          { title: "Colaboração e Intercultura", description: "Habilidade de trabalhar com outras pessoas, respeitando saberes diversos e contextos culturais, valorizando a diversidade." },
+          { title: "Comunicação e Narração", description: "Comunicação do seu processo de aprendizagem e resultados de forma clara." },
+          { title: "Empreendedorismo e Protagonismo", description: "Capacidade de agir com autonomia, transformar ideias em ação e gerar valor empreendedor para si e para a comunidade." },
+          { title: "Ética e Cidadania", description: "Consciência sobre o impacto social, ético e ambiental das tecnologias e das próprias criações e uso consciente das aplicações, por meio da curiosidade e senso de conexão com o mundo que o cerca." },
+          { title: "Reflexão e Autonomia", description: "Habilidade de aprender a aprender — refletir sobre o próprio processo e ajustar estratégias." },
+        ];
 
     const copyAllContent = () => {
       return `Competências Gerais da Computação (BNCC)\n\n${competencies.map(c => `${c.title}: ${c.description}`).join('\n\n')}`;
@@ -511,29 +513,23 @@ export const CurriculumLibraryView: React.FC<CurriculumLibraryViewProps> = ({ da
   };
 
   const WEFSkills = () => {
-    const categories = [
-      {
-        title: "Competências",
-        subtitle: "Como abordamos problemas",
-        skills: ["Criatividade", "Colaboração", "Comunicação", "Pensamento crítico"],
-        color: "bg-[#4C76BA]",
-        dotColor: "bg-[#4C76BA]"
-      },
-      {
-        title: "Habilidades Fundamentais",
-        subtitle: "Como aplicamos nossas habilidades no cotidiano",
-        skills: ["Curiosidade", "Iniciativa", "Resiliência", "Adaptabilidade", "Liderança", "Consciência social e cultural"],
-        color: "bg-[#94579E]",
-        dotColor: "bg-[#94579E]"
-      },
-      {
-        title: "Qualidades de Caráter",
-        subtitle: "Como nós lidamos com o mundo a nossa volta",
-        skills: ["Alfabetização e leitura", "Matemática", "Letramento científico", "Letramento tecnológico", "Educação financeira", "Letramento cultural e cívico"],
-        color: "bg-[#E7609F]",
-        dotColor: "bg-[#E7609F]"
-      }
-    ];
+    const wefData = (data.wefSkills && Array.isArray(data.wefSkills) && data.wefSkills.length > 0)
+      ? data.wefSkills.map((c: { title: string; subtitle: string; skills: string[] }) => ({
+          title: c.title,
+          subtitle: c.subtitle,
+          skills: c.skills,
+          color: "bg-[#4C76BA]",
+          dotColor: "bg-[#4C76BA]"
+        }))
+      : [];
+    const colorMap = ['bg-[#4C76BA]', 'bg-[#94579E]', 'bg-[#E7609F]'];
+    const categories = wefData.length > 0
+      ? wefData.map((c, i) => ({ ...c, color: colorMap[i] || 'bg-[#4C76BA]', dotColor: colorMap[i] || 'bg-[#4C76BA]' }))
+      : [
+          { title: "Competências", subtitle: "Como abordamos problemas", skills: ["Criatividade", "Colaboração", "Comunicação", "Pensamento crítico"], color: "bg-[#4C76BA]", dotColor: "bg-[#4C76BA]" },
+          { title: "Habilidades Fundamentais", subtitle: "Como aplicamos nossas habilidades no cotidiano", skills: ["Curiosidade", "Iniciativa", "Resiliência", "Adaptabilidade", "Liderança", "Consciência social e cultural"], color: "bg-[#94579E]", dotColor: "bg-[#94579E]" },
+          { title: "Qualidades de Caráter", subtitle: "Como nós lidamos com o mundo a nossa volta", skills: ["Alfabetização e leitura", "Matemática", "Letramento científico", "Letramento tecnológico", "Educação financeira", "Letramento cultural e cívico"], color: "bg-[#E7609F]", dotColor: "bg-[#E7609F]" }
+        ];
 
     const copyAllContent = () => {
       return `Habilidades do Século XXI (WEF)\n\n${categories.map(c => `${c.title} (${c.subtitle}):\n${c.skills.join(', ')}`).join('\n\n')}`;

@@ -40,6 +40,21 @@ const CURRICULUM_DATA: Record<string, any> = {
           }
         ]
       }
+    ],
+    generalCompetencies: [
+      { title: 'Criatividade, Inventividade e Experimentação', description: 'Capacidade de imaginar, experimentar e criar soluções originais para problemas reais, por meio da experimentação e prototipagem prática.' },
+      { title: 'Pensamento complexo, científico, artístico e sistêmico', description: 'Domínio funcional e criativo de tecnologias digitais, eletrônicas e de fabricação analógica e digital.' },
+      { title: 'Ciência, Investigação e Criticidade', description: 'Capacidade de investigar, formular hipóteses, experimentar e validar conclusões de forma crítica.' },
+      { title: 'Colaboração e Intercultura', description: 'Habilidade de trabalhar com outras pessoas, respeitando saberes diversos e contextos culturais, valorizando a diversidade.' },
+      { title: 'Comunicação e Narração', description: 'Comunicação do seu processo de aprendizagem e resultados de forma clara.' },
+      { title: 'Empreendedorismo e Protagonismo', description: 'Capacidade de agir com autonomia, transformar ideias em ação e gerar valor empreendedor para si e para a comunidade.' },
+      { title: 'Ética e Cidadania', description: 'Consciência sobre o impacto social, ético e ambiental das tecnologias e das próprias criações e uso consciente das aplicações, por meio da curiosidade e senso de conexão com o mundo que o cerca.' },
+      { title: 'Reflexão e Autonomia', description: 'Habilidade de aprender a aprender — refletir sobre o próprio processo e ajustar estratégias.' }
+    ],
+    wefSkills: [
+      { title: 'Competências', subtitle: 'Como abordamos problemas', skills: ['Criatividade', 'Colaboração', 'Comunicação', 'Pensamento crítico'] },
+      { title: 'Habilidades Fundamentais', subtitle: 'Como aplicamos nossas habilidades no cotidiano', skills: ['Curiosidade', 'Iniciativa', 'Resiliência', 'Adaptabilidade', 'Liderança', 'Consciência social e cultural'] },
+      { title: 'Qualidades de Caráter', subtitle: 'Como nós lidamos com o mundo a nossa volta', skills: ['Alfabetização e leitura', 'Matemática', 'Letramento científico', 'Letramento tecnológico', 'Educação financeira', 'Letramento cultural e cívico'] }
     ]
   },
   ei: {

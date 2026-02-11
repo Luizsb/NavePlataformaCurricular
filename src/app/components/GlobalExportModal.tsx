@@ -22,6 +22,23 @@ const EXPORT_OPTIONS = [
   { id: 'em', label: 'Ensino Médio', icon: Binary, color: '#3D1D3D' },
 ];
 
+const SEGMENT_FILE_NAMES: Record<string, string> = {
+  general: 'Curriculo_Geral',
+  ei: 'Educacao_Infantil',
+  ef1: 'Anos_Iniciais_EF1',
+  ef2: 'Anos_Finais_EF2',
+  em: 'Ensino_Medio',
+};
+
+function getExportFileName(selectedIds: string[]): string {
+  if (selectedIds.length === 0) return 'BCINaV_Curriculo_Export.pdf';
+  if (selectedIds.length === 1) {
+    const name = SEGMENT_FILE_NAMES[selectedIds[0]] ?? selectedIds[0];
+    return `BCINaV_${name}.pdf`;
+  }
+  return 'BCINaV_Curriculo_Geral.pdf';
+}
+
 export const GlobalExportModal: React.FC<GlobalExportModalProps> = ({ 
   isOpen, 
   onClose, 
@@ -113,66 +130,136 @@ export const GlobalExportModal: React.FC<GlobalExportModalProps> = ({
         // Cabeçalho do segmento
         addText(data.title.toUpperCase(), 18, 'bold', [148, 87, 158], 4);
 
-        if (data.hero?.foco) {
-          addText(`Foco: ${data.hero.foco}`, 11, 'bold', [27, 44, 73], 2);
-        }
-        yPos += 5;
-
-        data.sections.forEach((section: any) => {
-          yPos += 5;
-          addText(section.title, 14, 'bold', [76, 118, 186], 3);
-
-          if (section.items && Array.isArray(section.items)) {
-            section.items.forEach((item: any) => {
-              const itemTitle = typeof item === 'string' ? item : (item.title || '');
-              const itemDesc = typeof item === 'string' ? '' : (item.description || '');
-
-              yPos += 4;
-              addText(itemTitle, 12, 'bold', [231, 96, 159], 2);
-
-              if (itemDesc) {
-                const lines = itemDesc.split('\n');
-                lines.forEach((line: string) => {
-                  const trimmed = line.trim();
-                  if (!trimmed) return;
-
-                  const isObjeto = trimmed.toLowerCase().includes('objeto de conhecimento');
-                  const isCompetencia = trimmed.toLowerCase().includes('competência');
-                  const isHabilidade = trimmed.startsWith('(') || trimmed.toLowerCase().includes('habilidade');
-
-                  let style: 'normal' | 'bold' | 'italic' | 'bolditalic' = 'normal';
-                  let color: [number, number, number] = [80, 80, 90];
-                  let indent = 0;
-
-                  if (isObjeto) {
-                    style = 'bold';
-                    color = [27, 44, 73];
-                  } else if (isHabilidade) {
-                    style = 'italic';
-                    indent = 5;
-                  } else if (isCompetencia) {
-                    indent = 5;
-                  }
-
-                  doc.setFontSize(10);
-                  doc.setFont('helvetica', style);
-                  doc.setTextColor(color[0], color[1], color[2]);
-                  
-                  const splitLines = doc.splitTextToSize(trimmed, contentWidth - indent);
-                  splitLines.forEach((l: string) => {
-                    checkPageBreak(8);
-                    doc.text(l, margin + indent, yPos);
-                    yPos += 5;
-                  });
-                  yPos += 1;
-                });
-              }
+        // Hero completo (como no site)
+        if (data.hero) {
+          if (data.hero.tagline) {
+            doc.setFontSize(9);
+            doc.setFont('helvetica', 'bold');
+            doc.setTextColor(148, 87, 158);
+            doc.text(data.hero.tagline, margin, yPos);
+            yPos += 6;
+          }
+          if (data.hero.foco) {
+            addText('Foco: ' + data.hero.foco, 11, 'bold', [27, 44, 73], 2);
+          }
+          if (data.hero.valor_central) {
+            addText('Valor central: ' + data.hero.valor_central, 11, 'bold', [27, 44, 73], 2);
+          }
+          if (data.hero.description_blocks && Array.isArray(data.hero.description_blocks)) {
+            yPos += 3;
+            data.hero.description_blocks.forEach((block: string) => {
+              addText(block, 10, 'normal', [70, 70, 75], 2);
             });
           }
-        });
+          yPos += 6;
+        }
+
+        // Seções (eixos, anos, etc.)
+        if (data.sections && Array.isArray(data.sections)) {
+          data.sections.forEach((section: any) => {
+            yPos += 5;
+            addText(section.title, 14, 'bold', [76, 118, 186], 3);
+
+            if (section.items && Array.isArray(section.items)) {
+              section.items.forEach((item: any) => {
+                const itemTitle = typeof item === 'string' ? item : (item.title || '');
+                const itemDesc = typeof item === 'string' ? '' : (item.description || '');
+
+                yPos += 4;
+                addText(itemTitle, 12, 'bold', [231, 96, 159], 2);
+
+                if (itemDesc) {
+                  const lines = itemDesc.split('\n');
+                  lines.forEach((line: string) => {
+                    const trimmed = line.trim();
+                    if (!trimmed) return;
+
+                    const isObjeto = trimmed.toLowerCase().includes('objeto de conhecimento');
+                    const isCompetencia = trimmed.toLowerCase().includes('competência');
+                    const isHabilidade = trimmed.startsWith('(') || trimmed.toLowerCase().includes('habilidade');
+
+                    let style: 'normal' | 'bold' | 'italic' | 'bolditalic' = 'normal';
+                    let color: [number, number, number] = [80, 80, 90];
+                    let indent = 0;
+
+                    if (isObjeto) {
+                      style = 'bold';
+                      color = [27, 44, 73];
+                    } else if (isHabilidade) {
+                      style = 'italic';
+                      indent = 5;
+                    } else if (isCompetencia) {
+                      indent = 5;
+                    }
+
+                    doc.setFontSize(10);
+                    doc.setFont('helvetica', style);
+                    doc.setTextColor(color[0], color[1], color[2]);
+
+                    const splitLines = doc.splitTextToSize(trimmed, contentWidth - indent);
+                    splitLines.forEach((l: string) => {
+                      checkPageBreak(8);
+                      doc.text(l, margin + indent, yPos);
+                      yPos += 5;
+                    });
+                    yPos += 1;
+                  });
+                }
+              });
+            }
+          });
+        }
+
+        // Currículo Geral: Competências Gerais da BNCC (como no site)
+        if (id === 'general' && data.generalCompetencies && Array.isArray(data.generalCompetencies) && data.generalCompetencies.length > 0) {
+          yPos += 10;
+          checkPageBreak(25);
+          doc.setFontSize(10);
+          doc.setFont('helvetica', 'bold');
+          doc.setTextColor(231, 96, 159);
+          doc.text('Nave à Vela + BNCC', margin, yPos);
+          yPos += 6;
+          addText('Competências Gerais da BNCC Computação', 14, 'bold', [27, 44, 73], 4);
+          data.generalCompetencies.forEach((comp: { title: string; description: string }) => {
+            checkPageBreak(20);
+            addText(comp.title, 11, 'bold', [27, 44, 73], 2);
+            addText(comp.description, 10, 'normal', [70, 70, 75], 2);
+            yPos += 2;
+          });
+          yPos += 4;
+        }
+
+        // Currículo Geral: Habilidades do Século XXI (WEF) (como no site)
+        if (id === 'general' && data.wefSkills && Array.isArray(data.wefSkills) && data.wefSkills.length > 0) {
+          yPos += 8;
+          checkPageBreak(30);
+          doc.setFontSize(10);
+          doc.setFont('helvetica', 'bold');
+          doc.setTextColor(148, 87, 158);
+          doc.text('World Economic Forum', margin, yPos);
+          yPos += 6;
+          addText('Habilidades do Século XXI', 14, 'bold', [27, 44, 73], 4);
+          data.wefSkills.forEach((cat: { title: string; subtitle: string; skills: string[] }) => {
+            checkPageBreak(25);
+            addText(cat.title, 12, 'bold', [76, 118, 186], 2);
+            addText(cat.subtitle, 10, 'normal', [100, 100, 110], 2);
+            cat.skills.forEach((skill: string) => {
+              doc.setFontSize(10);
+              doc.setFont('helvetica', 'normal');
+              doc.setTextColor(27, 44, 73);
+              const skillLines = doc.splitTextToSize('• ' + skill, contentWidth - 8);
+              skillLines.forEach((l: string) => {
+                checkPageBreak(6);
+                doc.text(l, margin + 5, yPos);
+                yPos += 5;
+              });
+            });
+            yPos += 4;
+          });
+        }
       });
 
-      doc.save('BCINaV_Curriculo_Export.pdf');
+      doc.save(getExportFileName(selectedIds));
       toast.success('PDF baixado com sucesso!', { id: toastId });
       onClose();
     } catch (error) {
