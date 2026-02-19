@@ -48,6 +48,13 @@ const AXES = [
   "Design e Fabricação Digital",
 ];
 
+const FILTER_CATEGORIES = [
+  { id: "Todos", label: "Todos", icon: LayoutGrid },
+  { id: "Eixo Estruturante", label: "Eixo Estruturante", icon: Compass },
+  { id: "BNCC Computação", label: "BNCC Computação", icon: BookOpen },
+  { id: "Habilidades do Século XXI", label: "Habilidades do Século XXI", icon: Trophy },
+] as const;
+
 const EF1_YEARS = ["Todos", "1º Ano", "2º Ano", "3º Ano", "4º Ano", "5º Ano"];
 
 const EF2_YEARS = ["Todos", "6º Ano", "7º Ano", "8º Ano", "9º Ano"];
@@ -284,9 +291,15 @@ export const CurriculumLibraryView: React.FC<CurriculumLibraryViewProps> = ({
               itemDesc.toLowerCase().includes(query);
 
             const matchesAxis =
-              activeAxis === "Todos" ||
-              itemTitle.toLowerCase().includes(activeAxis.toLowerCase()) ||
-              section.title.toLowerCase().includes(activeAxis.toLowerCase());
+              activeAxis === "Todos"
+                ? true
+                : activeAxis === "Eixo Estruturante"
+                  ? AXES.some(
+                      (ax) =>
+                        itemTitle.toLowerCase().includes(ax.toLowerCase()) ||
+                        section.title.toLowerCase().includes(ax.toLowerCase()),
+                    )
+                  : false;
 
             const hasYearFilter =
               stage === "ef1" || stage === "ef2" || stage === "em";
@@ -1074,45 +1087,49 @@ export const CurriculumLibraryView: React.FC<CurriculumLibraryViewProps> = ({
                     </div>
                   )}
 
-                  {/* Axis Selectors - Desktop Row / Hidden on Mobile (Moved to Drawer) - oculto quando "Todos" em ano pois não há conteúdo para filtrar */}
+                  {/* Filtro de categoria - oculto quando "Todos" em ano (ef1/ef2/em) pois não há conteúdo */}
                   {(!(stage === "ef1" || stage === "ef2" || stage === "em") ||
                     activeYear !== "Todos") && (
                   <div className="hidden lg:block space-y-6">
                     <span className="text-[10px] font-black uppercase tracking-[3px] text-[#1B2C49]/40 ml-1 block mb-1">
-                      Eixos Estruturantes
+                      Categoria
                     </span>
                     <div className="flex flex-wrap items-center gap-2">
-                      <button
-                        onClick={() => handleAxisChange("Todos")}
-                        className={cn(
-                          "px-4 py-2.5 rounded-xl text-[11px] font-bold transition-all flex items-center gap-2 border shrink-0 cursor-pointer uppercase tracking-tight",
-                          activeAxis === "Todos"
-                            ? "bg-[#1B2C49] text-white border-[#1B2C49]"
-                            : "bg-white text-[#1B2C49]/60 border-[#E4E4E7] hover:border-[#1B2C49]/30",
-                        )}
-                      >
-                        <LayoutGrid className="size-3.5" />
-                        Todos
-                      </button>
-                      {AXES.map((axis) => (
-                        <button
-                          key={axis}
-                          onClick={() => handleAxisChange(axis)}
-                          className={cn(
-                            "px-4 py-2.5 rounded-xl text-[11px] font-bold transition-all flex items-center gap-2 border shrink-0 cursor-pointer uppercase tracking-tight",
-                            activeAxis === axis
-                              ? "bg-[#E7609F] text-white border-[#E7609F] shadow-lg shadow-[#E7609F]/20"
-                              : "bg-white text-[#1B2C49]/60 border-[#E4E4E7] hover:border-[#1B2C49]/30 hover:text-[#E7609F]",
-                          )}
-                        >
-                          {getIconByTitle(axis) &&
-                            React.cloneElement(
-                              getIconByTitle(axis) as React.ReactElement,
-                              { className: "size-3.5" },
+                      {(stage === "general"
+                        ? FILTER_CATEGORIES
+                        : FILTER_CATEGORIES.filter(
+                            (c) =>
+                              c.id === "Todos" || c.id === "Eixo Estruturante",
+                          )
+                      ).map((cat) => {
+                        const Icon = cat.icon;
+                        return (
+                          <button
+                            key={cat.id}
+                            onClick={() => handleAxisChange(cat.id)}
+                            className={cn(
+                              "px-3 py-2 rounded-xl text-[8px] font-bold transition-all flex items-center gap-1.5 border shrink-0 cursor-pointer uppercase tracking-tight",
+                              activeAxis === cat.id
+                                ? cat.id === "Todos"
+                                  ? "bg-[#1B2C49] text-white border-[#1B2C49]"
+                                  : "bg-[#E7609F] text-white border-[#E7609F] shadow-lg shadow-[#E7609F]/20"
+                                : "bg-white text-[#1B2C49]/60 border-[#E4E4E7] hover:border-[#1B2C49]/30 hover:border-[#E7609F]/50 hover:text-[#E7609F]",
                             )}
-                          {axis}
-                        </button>
-                      ))}
+                          >
+                            <Icon className="size-3 shrink-0" />
+                            <span
+                              className={cn(
+                                "min-w-0",
+                                cat.id === "Habilidades do Século XXI"
+                                  ? "whitespace-nowrap min-w-[200px]"
+                                  : "truncate max-w-[220px]",
+                              )}
+                            >
+                              {cat.label}
+                            </span>
+                          </button>
+                        );
+                      })}
                     </div>
                   </div>
                   )}
@@ -1121,41 +1138,7 @@ export const CurriculumLibraryView: React.FC<CurriculumLibraryViewProps> = ({
             </div>
 
             <div ref={contentBlockRef} className="pb-20 lg:pb-32">
-              {filteredSections.length > 0 ? (
-                filteredSections.map((section: any, idx: number) => {
-                  const isFirstDetailed =
-                    section.type === "detailed" && idx === 0;
-
-                  return (
-                    <div key={idx}>
-                      {section.type === "detailed" && (
-                        <DetailedSection
-                          title={section.title}
-                          items={section.items}
-                          isGeneral={stage === "general"}
-                        />
-                      )}
-                      {section.type === "list" && (
-                        <ListSection
-                          title={section.title}
-                          items={section.items}
-                        />
-                      )}
-
-                      {stage === "general" &&
-                        isFirstDetailed &&
-                        activeAxis === "Todos" &&
-                        activeYear === "Todos" &&
-                        !searchQuery && (
-                          <div className="contents">
-                            <GeneralCompetencies />
-                            <WEFSkills />
-                          </div>
-                        )}
-                    </div>
-                  );
-                })
-              ) : (stage === "ef1" ||
+              {(stage === "ef1" ||
                 stage === "ef2" ||
                 stage === "em") &&
                 activeYear === "Todos" &&
@@ -1172,6 +1155,49 @@ export const CurriculumLibraryView: React.FC<CurriculumLibraryViewProps> = ({
                     Selecione um ano no menu lateral para visualizar os conteúdos
                   </p>
                 </motion.div>
+              ) : filteredSections.length > 0 ||
+                (stage === "general" &&
+                  (activeAxis === "BNCC Computação" ||
+                    activeAxis === "Habilidades do Século XXI") &&
+                  activeYear === "Todos" &&
+                  !searchQuery) ? (
+                <div className="space-y-0">
+                  {filteredSections.map((section: any, idx: number) => (
+                    <div key={idx}>
+                      {section.type === "detailed" && (
+                        <DetailedSection
+                          title={section.title}
+                          items={section.items}
+                          isGeneral={stage === "general"}
+                        />
+                      )}
+                      {section.type === "list" && (
+                        <ListSection
+                          title={section.title}
+                          items={section.items}
+                        />
+                      )}
+                    </div>
+                  ))}
+                  {stage === "general" &&
+                    (activeAxis === "Todos" ||
+                      activeAxis === "BNCC Computação") &&
+                    activeYear === "Todos" &&
+                    !searchQuery && (
+                      <div className="contents">
+                        <GeneralCompetencies />
+                      </div>
+                    )}
+                  {stage === "general" &&
+                    (activeAxis === "Todos" ||
+                      activeAxis === "Habilidades do Século XXI") &&
+                    activeYear === "Todos" &&
+                    !searchQuery && (
+                      <div className="contents">
+                        <WEFSkills />
+                      </div>
+                    )}
+                </div>
               ) : (
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -1267,46 +1293,41 @@ export const CurriculumLibraryView: React.FC<CurriculumLibraryViewProps> = ({
                   </div>
                 )}
 
-                {/* Axis Filter in Drawer - oculto quando "Todos" em ano pois não há conteúdo */}
+                {/* Filtro de categoria - oculto quando "Todos" em ano pois não há conteúdo */}
                 {(!(stage === "ef1" || stage === "ef2" || stage === "em") ||
                   activeYear !== "Todos") && (
                 <div className="space-y-4">
                   <span className="text-[10px] font-black uppercase tracking-[2px] text-[#E7609F] flex items-center gap-2">
                     <LayoutGrid className="size-3.5" />
-                    Eixos Estruturantes
+                    Categoria
                   </span>
                   <div className="space-y-2">
-                    <button
-                      onClick={() => handleAxisChange("Todos")}
-                      className={cn(
-                        "w-full px-4 py-4 rounded-xl text-[12px] font-bold transition-all flex items-center gap-3 border",
-                        activeAxis === "Todos"
-                          ? "bg-[#1B2C49] text-white border-[#1B2C49]"
-                          : "bg-zinc-50 text-[#1B2C49]/60 border-zinc-100",
-                      )}
-                    >
-                      <LayoutGrid className="size-4" />
-                      Todos
-                    </button>
-                    {AXES.map((axis) => (
-                      <button
-                        key={axis}
-                        onClick={() => handleAxisChange(axis)}
-                        className={cn(
-                          "w-full px-4 py-4 rounded-xl text-[12px] font-bold transition-all flex items-center gap-3 border",
-                          activeAxis === axis
-                            ? "bg-[#E7609F] text-white border-[#E7609F]"
-                            : "bg-zinc-50 text-[#1B2C49]/60 border-zinc-100",
-                        )}
-                      >
-                        {getIconByTitle(axis) &&
-                          React.cloneElement(
-                            getIconByTitle(axis) as React.ReactElement,
-                            { className: "size-4" },
+                    {(stage === "general"
+                      ? FILTER_CATEGORIES
+                      : FILTER_CATEGORIES.filter(
+                          (c) =>
+                            c.id === "Todos" || c.id === "Eixo Estruturante",
+                        )
+                    ).map((cat) => {
+                      const Icon = cat.icon;
+                      return (
+                        <button
+                          key={cat.id}
+                          onClick={() => handleAxisChange(cat.id)}
+                          className={cn(
+                            "w-full px-4 py-4 rounded-xl text-[12px] font-bold transition-all flex items-center gap-3 border",
+                            activeAxis === cat.id
+                              ? cat.id === "Todos"
+                                ? "bg-[#1B2C49] text-white border-[#1B2C49]"
+                                : "bg-[#E7609F] text-white border-[#E7609F]"
+                              : "bg-zinc-50 text-[#1B2C49]/60 border-zinc-100",
                           )}
-                        <span className="flex-1 text-left">{axis}</span>
-                      </button>
-                    ))}
+                        >
+                          <Icon className="size-4 shrink-0" />
+                          <span className="flex-1 text-left">{cat.label}</span>
+                        </button>
+                      );
+                    })}
                   </div>
                 </div>
                 )}
