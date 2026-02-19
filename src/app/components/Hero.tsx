@@ -7,7 +7,7 @@ function Container2() {
 function Text() {
   return (
     <div className="absolute h-[19.188px] left-[48px] top-[8px] w-[243.766px]" data-name="Text">
-      <p className="absolute font-['Arial:Black',sans-serif] leading-[19.2px] left-0 not-italic text-[#1b2c49] text-[12px] top-0 tracking-[3.6px] uppercase">NAVE À VELA • CURRÍCULO</p>
+      <p className="absolute font-['Arial:Black',sans-serif] leading-[19.2px] left-0 not-italic text-[#1b2c49] text-[12px] top-0 tracking-[3.6px] uppercase">NAVE A VELA • CURRÍCULO</p>
     </div>
   );
 }

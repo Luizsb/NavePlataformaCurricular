@@ -1,7 +1,7 @@
 
   # Plataforma Curricular Digital
 
-  Plataforma web construída em **React 18 + Vite 6** com **TypeScript** e **Tailwind CSS**, para navegação, leitura e cópia da Base Curricular de Inovação Nave à Vela (BCINaV).  
+  Plataforma web construída em **React 18 + Vite 6** com **TypeScript** e **Tailwind CSS**, para navegação, leitura e cópia da Base Curricular de Inovação Nave a Vela (BCINaV).  
   A interface permite filtrar por segmentos (Currículo Geral, Educação Infantil, Anos Iniciais, Anos Finais e Ensino Médio), eixos estruturantes e anos/séries, além de copiar rapidamente competências e habilidades para uso em documentos e planejamentos.
 
   ## Tecnologias utilizadas
@@ -10,7 +10,7 @@
   - **Build / Dev server**: Vite
   - **Estilização**: Tailwind CSS + CSS customizado (`theme.css`)
   - **Animações**: `motion` (Framer Motion para React)
-  - **Ícones**: `lucide-react` e ícones da Nave à Vela em SVG
+  - **Ícones**: `lucide-react` e ícones da Nave a Vela em SVG
 
   ## Como rodar o projeto
 

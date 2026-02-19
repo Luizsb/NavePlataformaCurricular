@@ -111,6 +111,60 @@ export const GlobalExportModal: React.FC<GlobalExportModalProps> = ({
         yPos += spacing;
       };
 
+      // Processa texto com <em> e aplica itálico no PDF
+      const parseEmSegments = (s: string): { text: string; italic: boolean }[] => {
+        const segments: { text: string; italic: boolean }[] = [];
+        const parts = s.split(/(<em>|<\/em>)/gi);
+        let italic = false;
+        for (const p of parts) {
+          if (p.toLowerCase() === "<em>") {
+            italic = true;
+            continue;
+          }
+          if (p.toLowerCase() === "</em>") {
+            italic = false;
+            continue;
+          }
+          const plain = p.replace(/<[^>]+>/g, "");
+          if (plain) segments.push({ text: plain, italic });
+        }
+        if (segments.length === 0) segments.push({ text: s.replace(/<[^>]+>/g, ""), italic: false });
+        return segments;
+      };
+
+      const addTextWithEm = (
+        text: string,
+        size: number,
+        baseStyle: 'normal' | 'bold' | 'italic' | 'bolditalic',
+        color: [number, number, number],
+        indent: number,
+        lineHeight = 5
+      ) => {
+        doc.setFontSize(size);
+        doc.setTextColor(color[0], color[1], color[2]);
+        const maxWidth = contentWidth - indent;
+        let x = margin + indent;
+        const startX = margin + indent;
+
+        const segments = parseEmSegments(text);
+        segments.forEach((seg) => {
+          doc.setFont("helvetica", seg.italic ? "italic" : baseStyle);
+          const remainingWidth = maxWidth - (x - startX);
+          const parts = doc.splitTextToSize(seg.text, Math.max(1, remainingWidth));
+          parts.forEach((part: string, i: number) => {
+            if (i > 0) {
+              x = startX;
+              yPos += lineHeight;
+              checkPageBreak(lineHeight);
+            }
+            checkPageBreak(lineHeight);
+            doc.text(part, x, yPos);
+            x += doc.getTextWidth(part);
+          });
+        });
+        yPos += lineHeight + 1;
+      };
+
       // Título principal
       doc.setFontSize(22);
       doc.setFont('helvetica', 'bold');
@@ -174,35 +228,26 @@ export const GlobalExportModal: React.FC<GlobalExportModalProps> = ({
                     const trimmed = line.trim();
                     if (!trimmed) return;
 
-                    const isObjeto = trimmed.toLowerCase().includes('objeto de conhecimento');
-                    const isCompetencia = trimmed.toLowerCase().includes('competência');
-                    const isHabilidade = trimmed.startsWith('(') || trimmed.toLowerCase().includes('habilidade');
+                    const plain = trimmed.replace(/<[^>]+>/g, "");
+                    const isObjeto = plain.toLowerCase().includes('objeto de conhecimento');
+                    const isCompetencia = plain.toLowerCase().includes('competência');
+                    const isHabilidade = plain.startsWith('(') || plain.toLowerCase().includes('habilidade');
 
-                    let style: 'normal' | 'bold' | 'italic' | 'bolditalic' = 'normal';
+                    let baseStyle: 'normal' | 'bold' | 'italic' | 'bolditalic' = 'normal';
                     let color: [number, number, number] = [80, 80, 90];
                     let indent = 0;
 
                     if (isObjeto) {
-                      style = 'bold';
+                      baseStyle = 'bold';
                       color = [27, 44, 73];
                     } else if (isHabilidade) {
-                      style = 'italic';
+                      baseStyle = 'italic';
                       indent = 5;
                     } else if (isCompetencia) {
                       indent = 5;
                     }
 
-                    doc.setFontSize(10);
-                    doc.setFont('helvetica', style);
-                    doc.setTextColor(color[0], color[1], color[2]);
-
-                    const splitLines = doc.splitTextToSize(trimmed, contentWidth - indent);
-                    splitLines.forEach((l: string) => {
-                      checkPageBreak(8);
-                      doc.text(l, margin + indent, yPos);
-                      yPos += 5;
-                    });
-                    yPos += 1;
+                    addTextWithEm(trimmed, 10, baseStyle, color, indent, 5);
                   });
                 }
               });
@@ -217,7 +262,7 @@ export const GlobalExportModal: React.FC<GlobalExportModalProps> = ({
           doc.setFontSize(10);
           doc.setFont('helvetica', 'bold');
           doc.setTextColor(231, 96, 159);
-          doc.text('Nave à Vela + BNCC', margin, yPos);
+          doc.text('Nave a Vela + BNCC', margin, yPos);
           yPos += 6;
           addText('Competências Gerais da BNCC Computação', 14, 'bold', [27, 44, 73], 4);
           data.generalCompetencies.forEach((comp: { title: string; description: string }) => {

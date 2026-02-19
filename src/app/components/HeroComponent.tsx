@@ -10,7 +10,7 @@ export const Hero: React.FC<HeroProps> = ({ children }) => {
     <div className="w-full bg-white rounded-[56px] overflow-hidden shadow-[0px_20px_40px_-12px_rgba(27,44,73,0.04)] border border-white relative">
       <img 
         src={heroImage} 
-        alt="Nave à Vela Currículo - Onde a criatividade encontra a tecnologia" 
+        alt="Nave a Vela Currículo - Onde a criatividade encontra a tecnologia" 
         className="w-full h-auto object-cover block"
       />
       {children && (
