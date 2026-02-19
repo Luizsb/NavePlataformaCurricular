@@ -291,15 +291,25 @@ export const CurriculumLibraryView: React.FC<CurriculumLibraryViewProps> = ({
               itemDesc.toLowerCase().includes(query);
 
             const matchesAxis =
-              activeAxis === "Todos"
-                ? true
-                : activeAxis === "Eixo Estruturante"
-                  ? AXES.some(
-                      (ax) =>
-                        itemTitle.toLowerCase().includes(ax.toLowerCase()) ||
-                        section.title.toLowerCase().includes(ax.toLowerCase()),
-                    )
-                  : false;
+              stage === "general"
+                ? activeAxis === "Todos"
+                  ? true
+                  : activeAxis === "Eixo Estruturante"
+                    ? AXES.some(
+                        (ax) =>
+                          itemTitle.toLowerCase().includes(ax.toLowerCase()) ||
+                          section.title
+                            .toLowerCase()
+                            .includes(ax.toLowerCase()),
+                      )
+                    : false
+                : activeAxis === "Todos" ||
+                    itemTitle
+                      .toLowerCase()
+                      .includes(activeAxis.toLowerCase()) ||
+                    section.title
+                      .toLowerCase()
+                      .includes(activeAxis.toLowerCase());
 
             const hasYearFilter =
               stage === "ef1" || stage === "ef2" || stage === "em";
@@ -1087,49 +1097,81 @@ export const CurriculumLibraryView: React.FC<CurriculumLibraryViewProps> = ({
                     </div>
                   )}
 
-                  {/* Filtro de categoria - oculto quando "Todos" em ano (ef1/ef2/em) pois não há conteúdo */}
+                  {/* Filtro: Currículo Geral usa Categoria; demais stages usam Eixos Estruturantes */}
                   {(!(stage === "ef1" || stage === "ef2" || stage === "em") ||
                     activeYear !== "Todos") && (
                   <div className="hidden lg:block space-y-6">
                     <span className="text-[10px] font-black uppercase tracking-[3px] text-[#1B2C49]/40 ml-1 block mb-1">
-                      Categoria
+                      {stage === "general"
+                        ? "Categoria"
+                        : "Eixos Estruturantes"}
                     </span>
                     <div className="flex flex-wrap items-center gap-2">
-                      {(stage === "general"
-                        ? FILTER_CATEGORIES
-                        : FILTER_CATEGORIES.filter(
-                            (c) =>
-                              c.id === "Todos" || c.id === "Eixo Estruturante",
-                          )
-                      ).map((cat) => {
-                        const Icon = cat.icon;
-                        return (
-                          <button
-                            key={cat.id}
-                            onClick={() => handleAxisChange(cat.id)}
-                            className={cn(
-                              "px-3 py-2 rounded-xl text-[8px] font-bold transition-all flex items-center gap-1.5 border shrink-0 cursor-pointer uppercase tracking-tight",
-                              activeAxis === cat.id
-                                ? cat.id === "Todos"
-                                  ? "bg-[#1B2C49] text-white border-[#1B2C49]"
-                                  : "bg-[#E7609F] text-white border-[#E7609F] shadow-lg shadow-[#E7609F]/20"
-                                : "bg-white text-[#1B2C49]/60 border-[#E4E4E7] hover:border-[#1B2C49]/30 hover:border-[#E7609F]/50 hover:text-[#E7609F]",
-                            )}
-                          >
-                            <Icon className="size-3 shrink-0" />
-                            <span
+                      {stage === "general" ? (
+                        FILTER_CATEGORIES.map((cat) => {
+                          const Icon = cat.icon;
+                          return (
+                            <button
+                              key={cat.id}
+                              onClick={() => handleAxisChange(cat.id)}
                               className={cn(
-                                "min-w-0",
-                                cat.id === "Habilidades do Século XXI"
-                                  ? "whitespace-nowrap min-w-[200px]"
-                                  : "truncate max-w-[220px]",
+                                "px-3 py-2 rounded-xl text-[8px] font-bold transition-all flex items-center gap-1.5 border shrink-0 cursor-pointer uppercase tracking-tight",
+                                activeAxis === cat.id
+                                  ? cat.id === "Todos"
+                                    ? "bg-[#1B2C49] text-white border-[#1B2C49]"
+                                    : "bg-[#E7609F] text-white border-[#E7609F] shadow-lg shadow-[#E7609F]/20"
+                                  : "bg-white text-[#1B2C49]/60 border-[#E4E4E7] hover:border-[#1B2C49]/30 hover:border-[#E7609F]/50 hover:text-[#E7609F]",
                               )}
                             >
-                              {cat.label}
-                            </span>
+                              <Icon className="size-3 shrink-0" />
+                              <span
+                                className={cn(
+                                  "min-w-0",
+                                  cat.id === "Habilidades do Século XXI"
+                                    ? "whitespace-nowrap min-w-[200px]"
+                                    : "truncate max-w-[220px]",
+                                )}
+                              >
+                                {cat.label}
+                              </span>
+                            </button>
+                          );
+                        })
+                      ) : (
+                        <>
+                          <button
+                            onClick={() => handleAxisChange("Todos")}
+                            className={cn(
+                              "px-4 py-2.5 rounded-xl text-[11px] font-bold transition-all flex items-center gap-2 border shrink-0 cursor-pointer uppercase tracking-tight",
+                              activeAxis === "Todos"
+                                ? "bg-[#1B2C49] text-white border-[#1B2C49]"
+                                : "bg-white text-[#1B2C49]/60 border-[#E4E4E7] hover:border-[#1B2C49]/30",
+                            )}
+                          >
+                            <LayoutGrid className="size-3.5" />
+                            Todos
                           </button>
-                        );
-                      })}
+                          {AXES.map((axis) => (
+                            <button
+                              key={axis}
+                              onClick={() => handleAxisChange(axis)}
+                              className={cn(
+                                "px-4 py-2.5 rounded-xl text-[11px] font-bold transition-all flex items-center gap-2 border shrink-0 cursor-pointer uppercase tracking-tight",
+                                activeAxis === axis
+                                  ? "bg-[#E7609F] text-white border-[#E7609F] shadow-lg shadow-[#E7609F]/20"
+                                  : "bg-white text-[#1B2C49]/60 border-[#E4E4E7] hover:border-[#E7609F]/50 hover:text-[#E7609F]",
+                              )}
+                            >
+                              {getIconByTitle(axis) &&
+                                React.cloneElement(
+                                  getIconByTitle(axis) as React.ReactElement,
+                                  { className: "size-3.5" },
+                                )}
+                              {axis}
+                            </button>
+                          ))}
+                        </>
+                      )}
                     </div>
                   </div>
                   )}
@@ -1293,41 +1335,75 @@ export const CurriculumLibraryView: React.FC<CurriculumLibraryViewProps> = ({
                   </div>
                 )}
 
-                {/* Filtro de categoria - oculto quando "Todos" em ano pois não há conteúdo */}
+                {/* Filtro: Currículo Geral usa Categoria; demais stages usam Eixos Estruturantes */}
                 {(!(stage === "ef1" || stage === "ef2" || stage === "em") ||
                   activeYear !== "Todos") && (
                 <div className="space-y-4">
                   <span className="text-[10px] font-black uppercase tracking-[2px] text-[#E7609F] flex items-center gap-2">
                     <LayoutGrid className="size-3.5" />
-                    Categoria
+                    {stage === "general"
+                      ? "Categoria"
+                      : "Eixos Estruturantes"}
                   </span>
                   <div className="space-y-2">
-                    {(stage === "general"
-                      ? FILTER_CATEGORIES
-                      : FILTER_CATEGORIES.filter(
-                          (c) =>
-                            c.id === "Todos" || c.id === "Eixo Estruturante",
-                        )
-                    ).map((cat) => {
-                      const Icon = cat.icon;
-                      return (
-                        <button
-                          key={cat.id}
-                          onClick={() => handleAxisChange(cat.id)}
-                          className={cn(
-                            "w-full px-4 py-4 rounded-xl text-[12px] font-bold transition-all flex items-center gap-3 border",
-                            activeAxis === cat.id
-                              ? cat.id === "Todos"
+                    {stage === "general"
+                      ? FILTER_CATEGORIES.map((cat) => {
+                          const Icon = cat.icon;
+                          return (
+                            <button
+                              key={cat.id}
+                              onClick={() => handleAxisChange(cat.id)}
+                              className={cn(
+                                "w-full px-4 py-4 rounded-xl text-[12px] font-bold transition-all flex items-center gap-3 border",
+                                activeAxis === cat.id
+                                  ? cat.id === "Todos"
+                                    ? "bg-[#1B2C49] text-white border-[#1B2C49]"
+                                    : "bg-[#E7609F] text-white border-[#E7609F]"
+                                  : "bg-zinc-50 text-[#1B2C49]/60 border-zinc-100",
+                              )}
+                            >
+                              <Icon className="size-4 shrink-0" />
+                              <span className="flex-1 text-left">
+                                {cat.label}
+                              </span>
+                            </button>
+                          );
+                        })
+                      : (
+                        <>
+                          <button
+                            onClick={() => handleAxisChange("Todos")}
+                            className={cn(
+                              "w-full px-4 py-4 rounded-xl text-[12px] font-bold transition-all flex items-center gap-3 border",
+                              activeAxis === "Todos"
                                 ? "bg-[#1B2C49] text-white border-[#1B2C49]"
-                                : "bg-[#E7609F] text-white border-[#E7609F]"
-                              : "bg-zinc-50 text-[#1B2C49]/60 border-zinc-100",
-                          )}
-                        >
-                          <Icon className="size-4 shrink-0" />
-                          <span className="flex-1 text-left">{cat.label}</span>
-                        </button>
-                      );
-                    })}
+                                : "bg-zinc-50 text-[#1B2C49]/60 border-zinc-100",
+                            )}
+                          >
+                            <LayoutGrid className="size-4" />
+                            Todos
+                          </button>
+                          {AXES.map((axis) => (
+                            <button
+                              key={axis}
+                              onClick={() => handleAxisChange(axis)}
+                              className={cn(
+                                "w-full px-4 py-4 rounded-xl text-[12px] font-bold transition-all flex items-center gap-3 border",
+                                activeAxis === axis
+                                  ? "bg-[#E7609F] text-white border-[#E7609F]"
+                                  : "bg-zinc-50 text-[#1B2C49]/60 border-zinc-100",
+                              )}
+                            >
+                              {getIconByTitle(axis) &&
+                                React.cloneElement(
+                                  getIconByTitle(axis) as React.ReactElement,
+                                  { className: "size-4" },
+                                )}
+                              <span className="flex-1 text-left">{axis}</span>
+                            </button>
+                          ))}
+                        </>
+                      )}
                   </div>
                 </div>
                 )}
@@ -1357,7 +1433,7 @@ export const CurriculumLibraryView: React.FC<CurriculumLibraryViewProps> = ({
             transition={{ type: "spring", stiffness: 260, damping: 24 }}
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             aria-label="Voltar ao topo"
-            className="fixed bottom-6 right-0 z-[120] h-9 w-11 rounded-l-full bg-[#1B2C49] text-white shadow-[0_10px_24px_rgba(27,44,73,0.35)] flex items-center justify-center cursor-pointer border border-r-0 border-[#122035]"
+            className="fixed bottom-6 right-0 z-[120] h-9 w-11 rounded-l-full bg-[#4b76b9] text-white shadow-[0_10px_24px_rgba(75,118,185,0.35)] flex items-center justify-center cursor-pointer border border-r-0 border-[#4b76b9]"
           >
             <ChevronUp className="size-4" />
           </motion.button>
