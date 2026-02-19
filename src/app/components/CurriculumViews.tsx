@@ -1060,7 +1060,7 @@ export const CurriculumLibraryView: React.FC<CurriculumLibraryViewProps> = ({
                     <input
                       type="text"
                       placeholder="Pesquisar no currículo..."
-                      className="h-[56px] lg:h-[64px] w-full rounded-xl lg:rounded-2xl bg-white border border-[#E4E4E7] pl-12 lg:pl-14 pr-12 lg:pr-14 text-[14px] lg:text-[16px] font-medium text-[#1B2C49] outline-none transition-all placeholder:text-zinc-300 focus:ring-4 focus:ring-[#E7609F]/10 focus:border-[#E7609F]"
+                      className="h-[56px] lg:h-[64px] w-full rounded-xl lg:rounded-2xl bg-white border border-[#E4E4E7] pl-12 lg:pl-14 pr-12 lg:pr-14 text-[14px] lg:text-[11px] font-medium text-[#1B2C49] outline-none transition-all placeholder:text-zinc-300 focus:ring-4 focus:ring-[#E7609F]/10 focus:border-[#E7609F]"
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
                     />
@@ -1115,7 +1115,7 @@ export const CurriculumLibraryView: React.FC<CurriculumLibraryViewProps> = ({
                               key={cat.id}
                               onClick={() => handleAxisChange(cat.id)}
                               className={cn(
-                                "px-3 py-2 rounded-xl text-[8px] font-bold transition-all flex items-center gap-1.5 border shrink-0 cursor-pointer uppercase tracking-tight",
+                                "px-3 py-2 rounded-xl text-[11px] font-bold transition-all flex items-center gap-1.5 border shrink-0 cursor-pointer uppercase tracking-tight",
                                 activeAxis === cat.id
                                   ? cat.id === "Todos"
                                     ? "bg-[#1B2C49] text-white border-[#1B2C49]"
@@ -1124,14 +1124,7 @@ export const CurriculumLibraryView: React.FC<CurriculumLibraryViewProps> = ({
                               )}
                             >
                               <Icon className="size-3 shrink-0" />
-                              <span
-                                className={cn(
-                                  "min-w-0",
-                                  cat.id === "Habilidades do Século XXI"
-                                    ? "whitespace-nowrap min-w-[200px]"
-                                    : "truncate max-w-[220px]",
-                                )}
-                              >
+                              <span className="min-w-0 text-[11px] truncate max-w-[160px]">
                                 {cat.label}
                               </span>
                             </button>
@@ -1354,7 +1347,7 @@ export const CurriculumLibraryView: React.FC<CurriculumLibraryViewProps> = ({
                               key={cat.id}
                               onClick={() => handleAxisChange(cat.id)}
                               className={cn(
-                                "w-full px-4 py-4 rounded-xl text-[12px] font-bold transition-all flex items-center gap-3 border",
+                                "w-full px-4 py-4 rounded-xl text-[11px] font-bold transition-all flex items-center gap-3 border",
                                 activeAxis === cat.id
                                   ? cat.id === "Todos"
                                     ? "bg-[#1B2C49] text-white border-[#1B2C49]"
