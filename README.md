@@ -25,3 +25,21 @@
      ```bash
      npm run dev
      ```
+
+  ## Como publicar o site
+
+  O projeto é escrito em TypeScript/React, mas **para subir em um servidor você usa HTML (e os arquivos gerados)**. O Vite faz isso no build:
+
+  1. Gere a versão para produção:
+
+     ```bash
+     npm run build
+     ```
+
+  2. A pasta `dist` será criada/atualizada com arquivos **HTML, CSS e JavaScript** prontos para qualquer hospedagem estática (ex.: GitHub Pages, Netlify, Vercel, servidor próprio).
+
+  3. Suba o **conteúdo da pasta `dist`** para o seu provedor. O `index.html` é a página principal; os scripts e estilos estão em `dist/assets/`.
+
+  ## Créditos
+
+  Componentes de interface baseados em [shadcn/ui](https://ui.shadcn.com/) (MIT). Imagens de [Unsplash](https://unsplash.com) quando utilizadas.
