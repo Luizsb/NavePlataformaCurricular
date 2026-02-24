@@ -6,7 +6,7 @@
 
   ## Tecnologias utilizadas
 
-  - **Linguagem**: TypeScript / JavaScript (React)
+  - **Linguagem**: TypeScript (React com tipagem estática; o build gera JavaScript)
   - **Build / Dev server**: Vite
   - **Estilização**: Tailwind CSS + CSS customizado (`theme.css`)
   - **Animações**: `motion` (Framer Motion para React)
