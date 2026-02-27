@@ -1,0 +1,103 @@
+================================================================================
+  COMO HOSPEDAR A PLATAFORMA CURRICULAR DIGITAL
+================================================================================
+
+Este é um site estático (HTML, CSS e JavaScript). Não precisa de WordPress,
+PHP ou banco de dados para funcionar. Qualquer servidor web pode hospedá-lo.
+
+================================================================================
+  OPÇÕES DE HOSPEDAGEM (incluindo em servidores WordPress)
+================================================================================
+
+OPÇÃO 1 - SUBDOMÍNIO (recomendado)
+----------------------------------
+Se o site principal usa WordPress (ex: www.suaescola.com.br), você pode
+colocar a Plataforma em um subdomínio (ex: plataforma.suaescola.com.br):
+
+  1. No painel de controle (cPanel ou similar), crie um subdomínio
+     "plataforma" apontando para uma pasta (ex: /plataforma ou /public_html/plataforma)
+
+  2. Faça upload de TODOS os arquivos desta pasta para lá:
+     - index.html (na raiz)
+     - Pasta assets/ completa (com todos os arquivos dentro)
+
+  3. Acesse: https://plataforma.suaescola.com.br
+
+
+OPÇÃO 2 - SUBPASTA DO SITE
+--------------------------
+Se preferir no mesmo domínio (ex: www.suaescola.com.br/plataforma):
+
+  1. Crie uma pasta no servidor (ex: "plataforma" dentro de public_html)
+
+  2. Faça upload de todos os arquivos DENTRO dessa pasta
+
+  3. Acesse: https://www.suaescola.com.br/plataforma/
+
+  IMPORTANTE: Se as páginas não carregarem corretamente, pode ser necessário
+  ajustar o arquivo de configuração do build. Entre em contato com quem gerou
+  os arquivos.
+
+
+OPÇÃO 3 - SITE PRINCIPAL
+------------------------
+Se este for o único site ou o principal:
+
+  1. Faça upload dos arquivos na pasta raiz do servidor (geralmente public_html)
+
+  2. O index.html deve ficar na raiz
+  3. A pasta assets/ deve ficar ao lado do index.html
+
+  4. Acesse: https://seusite.com.br
+
+
+================================================================================
+  COMO FAZER O UPLOAD
+================================================================================
+
+Via FTP (FileZilla, WinSCP, etc.):
+  - Conecte ao servidor
+  - Navegue até a pasta destino
+  - Envie: index.html + pasta assets (com todo o conteúdo)
+
+Via cPanel - Gerenciador de Arquivos:
+  - Acesse "Gerenciador de Arquivos"
+  - Navegue até a pasta destino
+  - Clique em "Carregar" (Upload)
+  - Envie o index.html e compacte a pasta assets em .zip, depois extraia no servidor
+
+Via hospedagem com Git:
+  - Alguns provedores permitem deploy direto do repositório
+  - Repositório: https://github.com/Luizsb/NavePlataformaCurricular
+
+
+================================================================================
+  ESTRUTURA OBRIGATÓRIA (não altere)
+================================================================================
+
+  pasta-destino/
+  ├── index.html          ← página principal
+  └── assets/             ← obrigatório manter este nome
+      ├── index-*.css
+      ├── index-*.js
+      └── (outros arquivos .js, .css, .png)
+
+Não renomeie a pasta "assets". Os arquivos .html referenciam ela por este nome.
+
+
+================================================================================
+  OBSERVAÇÕES
+================================================================================
+
+- NÃO abra o index.html diretamente no computador (duplo clique).
+  O site só funciona quando acessado via http:// ou https:// (servidor web).
+
+- Se aparecer tela em branco: verifique se todos os arquivos foram enviados
+  e se a pasta assets está no mesmo nível que o index.html.
+
+- Funciona em: Apache, Nginx, GitHub Pages, Netlify, Vercel, hospedagem
+  compartilhada, etc. Não precisa de recursos especiais.
+
+================================================================================
+  Dúvidas? Contate a equipe de desenvolvimento.
+================================================================================
