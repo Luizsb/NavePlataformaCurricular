@@ -7,7 +7,7 @@ import { GlobalExportModal } from "./components/GlobalExportModal";
 
 const CURRICULUM_DATA: Record<string, any> = {
   general: {
-    title: "Base Curricular de Inovação Nave a Vela (Nova BCCI)",
+    title: "Nova Base Curricular para Cultura de Inovação (Nova BCCI)",
     hero: {
       tagline: "NAVE A VELA • CURRÍCULO",
       foco: "Desenvolver sujeitos criativos, críticos e prontos para transformar o mundo.",
@@ -516,7 +516,7 @@ const CURRICULUM_DATA: Record<string, any> = {
           {
             title: "3ª série",
             description:
-              "Objeto de conhecimento: Educação midiática responsável\nCompetência: Atuar de forma autônoma, criativa e ética no ecossistema digital contemporâneo.\nHabilidade: (EM13CO25) Dialogar em ambientes virtuais com segurança e respeito às diferenças culturais e pessoais, reconhecendo e denunciando atitudes abusivas.\nHabilidade: roduzir projetos transmídia, com Inteligência Artificial e storytelling interativo, que impliquem ações digitais de impacto social.\nHabilidade: (EM13CO26) Aplicar os conceitos e pressupostos do direito digital em sua conduta e experiências com o cotidiano da cultura digital, bem como na produção e uso de artefatos computacionais.",
+              "Objeto de conhecimento: Educação midiática responsável\nCompetência: Atuar de forma autônoma, criativa e ética no ecossistema digital contemporâneo.\nHabilidade: (EM13CO25) Dialogar em ambientes virtuais com segurança e respeito às diferenças culturais e pessoais, reconhecendo e denunciando atitudes abusivas.\nHabilidade: Produzir projetos transmídia, com Inteligência Artificial e storytelling interativo, que impliquem ações digitais de impacto social.\nHabilidade: (EM13CO26) Aplicar os conceitos e pressupostos do direito digital em sua conduta e experiências com o cotidiano da cultura digital, bem como na produção e uso de artefatos computacionais.",
           },
         ],
       },
@@ -577,7 +577,7 @@ export default function App() {
       <footer className="bg-white border-t border-zinc-100 py-12">
         <div className="mx-auto max-w-[1100px] px-8 flex flex-col md:flex-row justify-center items-center gap-6">
           <div className="text-[12px] font-black text-zinc-400 uppercase tracking-widest">
-            © 2026 Nave a Vela • Base Curricular de Inovação
+            © 2026 Nave a Vela • Nova Base Curricular para Cultura de Inovação.
           </div>
         </div>
       </footer>
