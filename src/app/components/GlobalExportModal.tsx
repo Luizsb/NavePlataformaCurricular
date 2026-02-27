@@ -31,12 +31,12 @@ const SEGMENT_FILE_NAMES: Record<string, string> = {
 };
 
 function getExportFileName(selectedIds: string[]): string {
-  if (selectedIds.length === 0) return 'BCINaV_Curriculo_Export.pdf';
+  if (selectedIds.length === 0) return 'NovaBCCI_Curriculo_Export.pdf';
   if (selectedIds.length === 1) {
     const name = SEGMENT_FILE_NAMES[selectedIds[0]] ?? selectedIds[0];
-    return `BCINaV_${name}.pdf`;
+    return `NovaBCCI_${name}.pdf`;
   }
-  return 'BCINaV_Curriculo_Geral.pdf';
+  return 'NovaBCCI_Curriculo_Geral.pdf';
 }
 
 export const GlobalExportModal: React.FC<GlobalExportModalProps> = ({ 
@@ -169,7 +169,7 @@ export const GlobalExportModal: React.FC<GlobalExportModalProps> = ({
       doc.setFontSize(22);
       doc.setFont('helvetica', 'bold');
       doc.setTextColor(231, 96, 159);
-      doc.text('BCINaV - Base Curricular de Inovação', pageWidth / 2, yPos, { align: 'center' });
+      doc.text('Nova BCCI - Base Curricular de Inovação', pageWidth / 2, yPos, { align: 'center' });
       yPos += 15;
 
       selectedIds.forEach((id, index) => {

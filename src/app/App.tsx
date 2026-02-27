@@ -577,7 +577,7 @@ export default function App() {
       <footer className="bg-white border-t border-zinc-100 py-12">
         <div className="mx-auto max-w-[1100px] px-8 flex flex-col md:flex-row justify-center items-center gap-6">
           <div className="text-[12px] font-black text-zinc-400 uppercase tracking-widest">
-            © 2026 Nave a Vela • Nova Base Curricular para Cultura de Inovação.
+            © 2026 Nave a Vela • Nova Base Curricular para Cultura de Inovação
           </div>
         </div>
       </footer>

@@ -134,7 +134,7 @@ export const Header: React.FC<HeaderProps> = ({ activePage, setActivePage, onOpe
                 )}
               </div>
               <div className="p-8 border-t border-zinc-100 bg-zinc-50/50">
-                <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#1B2C49]/30">BCINaV • Plataforma Curricular</span>
+                <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#1B2C49]/30">Nova BCCI • Plataforma Curricular</span>
               </div>
             </motion.div>
           </>
