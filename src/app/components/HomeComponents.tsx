@@ -18,7 +18,7 @@ export const Hero: React.FC = () => {
           className="text-center"
         >
           <h1 className="mx-auto max-w-3xl text-[32px] font-black tracking-tight text-[#4c1d95] leading-tight mb-8">
-            Base curricular da inovação Nave a vela (BCINaV)
+            Base curricular da inovação Nave a vela (Nova BCCI)
           </h1>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8 mb-16">
@@ -29,7 +29,7 @@ export const Hero: React.FC = () => {
 
           <div className="mx-auto max-w-4xl text-left space-y-6">
             <p className="text-[16px] leading-relaxed text-zinc-600 font-medium">
-              A Base Curricular de Inovação do Nave a Vela (BCINaV) propõe um
+              A Base Curricular de Inovação do Nave a Vela (Nova BCCI) propõe um
               alinhamento entre a Base Nacional Comum Curricular (BNCC) da
               Computação, as Habilidades do Século XXI (World Economic Forum) e
               referências internacionais, como as diretrizes da International
@@ -39,7 +39,7 @@ export const Hero: React.FC = () => {
               contemporânea.
             </p>
             <p className="text-[16px] leading-relaxed text-zinc-600 font-medium">
-              O objetivo da BCINaV é orientar uma Educação Tecnológica voltada à
+              O objetivo da Nova BCCI é orientar uma Educação Tecnológica voltada à
               formação de sujeitos criativos, críticos e inventivos, capazes de
               compreender e transformar o mundo por meio do fazer, do pensar e
               do conviver. Busca-se desenvolver a capacidade de expressar ideias
@@ -55,7 +55,7 @@ export const Hero: React.FC = () => {
               pensamento crítico, técnica, imaginação e compromisso social.
             </p>
             <p className="text-[16px] leading-relaxed text-zinc-600 font-medium">
-              Com base nesses princípios, a BCINaV estrutura-se em quatro eixos
+              Com base nesses princípios, a Nova BCCI estrutura-se em quatro eixos
               temáticos que orientam os objetos de aprendizagem previstos para
               cada segmento e etapa escolar, bem como as competências e
               habilidades que caracterizam a Educação Tecnológica proposta pelo

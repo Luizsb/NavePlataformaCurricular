@@ -7,7 +7,7 @@ import { GlobalExportModal } from "./components/GlobalExportModal";
 
 const CURRICULUM_DATA: Record<string, any> = {
   general: {
-    title: "Base Curricular de Inovação Nave a Vela (BCINaV)",
+    title: "Base Curricular de Inovação Nave a Vela (Nova BCCI)",
     hero: {
       tagline: "NAVE A VELA • CURRÍCULO",
       foco: "Desenvolver sujeitos criativos, críticos e prontos para transformar o mundo.",
@@ -183,7 +183,7 @@ const CURRICULUM_DATA: Record<string, any> = {
     ],
   },
   ef1: {
-    title: "BCINaV - Ensino Fundamental Anos Iniciais",
+    title: "Nova BCCI - Ensino Fundamental Anos Iniciais",
     hero: {
       tagline: "NAVE A VELA • ANOS INICIAIS",
       foco: "Fazer para compreender: introduzir lógica, causa e efeito, empatia e coautoria; entender e construir tecnologias simples.",
@@ -323,7 +323,7 @@ const CURRICULUM_DATA: Record<string, any> = {
     ],
   },
   ef2: {
-    title: "BCINaV - Ensino Fundamental Anos Finais",
+    title: "Nova BCCI - Ensino Fundamental Anos Finais",
     hero: {
       tagline: "NAVE A VELA • ANOS FINAIS",
       foco: "Investigar, projetar e compreender a tecnologia como construção social e cultural.",
@@ -443,7 +443,7 @@ const CURRICULUM_DATA: Record<string, any> = {
     ],
   },
   em: {
-    title: "BCINaV - Ensino Médio",
+    title: "Nova BCCI - Ensino Médio",
     hero: {
       tagline: "NAVE A VELA • ENSINO MÉDIO",
       foco: "Desenvolver autoria tecnológica e capacidade de inovação com impacto social, criar startups educacionais, campanhas digitais e portfólios multimodais.",

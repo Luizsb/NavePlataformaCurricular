@@ -160,7 +160,7 @@ const CurriculumInfoButton = ({
       )}
     >
       <BookOpen className="size-3 md:size-4 text-white group-hover:scale-110 transition-transform shrink-0" />
-      <span className="whitespace-nowrap">Sobre a BCINaV</span>
+      <span className="whitespace-nowrap">Sobre a Nova BCCI</span>
     </motion.button>
   );
 };
@@ -1456,7 +1456,7 @@ export const CurriculumLibraryView: React.FC<CurriculumLibraryViewProps> = ({
                       Fundamentos Pedagógicos
                     </span>
                     <h2 className="text-[32px] font-bold text-[#1B2C49] leading-tight">
-                      Sobre a BCINaV
+                      Sobre a Nova BCCI
                     </h2>
                   </div>
                   <button
