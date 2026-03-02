@@ -254,7 +254,7 @@ const CURRICULUM_DATA: Record<string, any> = {
           {
             title: "5º Ano",
             description:
-              "Objeto de conhecimento: Arquitetura de computadores\nCompetência: Explorar tecnologias de Inteligência Artificial e compreender como aprendem.\nHabilidade: NavEF05CO02) Reconhecer que, para um computador realizar tarefas, ele se comunica com o mundo exterior com o uso de interfaces físicas\nHabilidade: (EF05CO05) Identificar os componentes principais de um computador (dispositivos de entrada/saída, processadores e armazenamento).\nObjeto de conhecimento: Armazenamento\nCompetência: Reconhecer sistemas de armazenamento no dia a dia.\nHabilidade: (EF05CO06) Reconhecer que os dados podem ser armazenados em um dispositivo local ou remoto.\nObjeto de conhecimento: Sistema\nCompetência: Compreender sistemas, computação em nuvem, entrada e saída de dados, de forma lúdica.\nHabilidade: (EF05CO07) Reconhecer a necessidade de um sistema operacional para a execução de programas e gerenciamento do hardware.",
+              "Objeto de conhecimento: Arquitetura de computadores\nCompetência: Explorar tecnologias de Inteligência Artificial e compreender como aprendem.\nHabilidade: (NavEF05CO02) Reconhecer que, para um computador realizar tarefas, ele se comunica com o mundo exterior com o uso de interfaces físicas\nHabilidade: (EF05CO05) Identificar os componentes principais de um computador (dispositivos de entrada/saída, processadores e armazenamento).\nObjeto de conhecimento: Armazenamento\nCompetência: Reconhecer sistemas de armazenamento no dia a dia.\nHabilidade: (EF05CO06) Reconhecer que os dados podem ser armazenados em um dispositivo local ou remoto.\nObjeto de conhecimento: Sistema\nCompetência: Compreender sistemas, computação em nuvem, entrada e saída de dados, de forma lúdica.\nHabilidade: (EF05CO07) Reconhecer a necessidade de um sistema operacional para a execução de programas e gerenciamento do hardware.",
           },
         ],
       },
@@ -316,7 +316,7 @@ const CURRICULUM_DATA: Record<string, any> = {
           {
             title: "5º Ano",
             description:
-              "Objeto de conhecimento: Design, prototipagem e criação de soluções autorais criativas\nCompetência: Desenvolver pequenos projetos de fabricação digital com consciência ética, criativa e sustentável.\nHabilidade: (NavEF05CO05) Produzir objetos funcionais usando diversos conhecimentos técnicos contextualizados. (Ex. reutilização de materiais).\nHabilidade: (NavEF05CO06) Refletir sobre o impacto das criações na comunidade. (Ex. robisco)",
+              "Objeto de conhecimento: Design, prototipagem e criação de soluções autorais criativas\nCompetência: Desenvolver pequenos projetos de fabricação digital com consciência ética, criativa e sustentável.\nHabilidade: (NavEF05CO05) Produzir objetos funcionais usando diversos conhecimentos técnicos contextualizados. (Ex. reutilização de materiais)\nHabilidade: (NavEF05CO06) Refletir sobre o impacto das criações na comunidade. (Ex. robisco)",
           },
         ],
       },
