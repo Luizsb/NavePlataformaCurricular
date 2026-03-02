@@ -1233,9 +1233,16 @@ export const CurriculumLibraryView: React.FC<CurriculumLibraryViewProps> = ({
                 (stage === "general" &&
                   (activeAxis === "BNCC Computação" ||
                     activeAxis === "Habilidades do Século XXI") &&
-                  activeYear === "Todos" &&
                   !searchQuery) ? (
-                <div className="space-y-0">
+                <div
+                  className={cn(
+                    "space-y-0",
+                    stage === "general" &&
+                      (activeAxis === "BNCC Computação" ||
+                        activeAxis === "Habilidades do Século XXI") &&
+                      "space-y-6 lg:space-y-10",
+                  )}
+                >
                   {filteredSections.map((section: any, idx: number) => (
                     <div key={idx}>
                       {section.type === "detailed" && (
@@ -1256,19 +1263,17 @@ export const CurriculumLibraryView: React.FC<CurriculumLibraryViewProps> = ({
                   {stage === "general" &&
                     (activeAxis === "Todos" ||
                       activeAxis === "BNCC Computação") &&
-                    activeYear === "Todos" &&
                     !searchQuery && (
                       <div className="contents">
-                        <GeneralCompetencies />
+                        <GeneralCompetencies key="bncc" />
                       </div>
                     )}
                   {stage === "general" &&
                     (activeAxis === "Todos" ||
                       activeAxis === "Habilidades do Século XXI") &&
-                    activeYear === "Todos" &&
                     !searchQuery && (
                       <div className="contents">
-                        <WEFSkills />
+                        <WEFSkills key="wef" />
                       </div>
                     )}
                 </div>
