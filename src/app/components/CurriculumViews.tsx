@@ -486,12 +486,10 @@ export const CurriculumLibraryView: React.FC<CurriculumLibraryViewProps> = ({
               const lines = item.description.split("\n");
               const groups: {
                 object: string;
-                children: {
-                  type: "competencia" | "habilidade" | "conteudo";
-                  text: string;
-                }[];
+                competencias: { text: string; habilidades: { text: string }[] }[];
               }[] = [];
               let currentGroup: (typeof groups)[0] | null = null;
+              let currentCompetencia: (typeof groups)[0]["competencias"][0] | null = null;
 
               lines.forEach((line: string) => {
                 const trimmed = line.trim();
@@ -507,38 +505,49 @@ export const CurriculumLibraryView: React.FC<CurriculumLibraryViewProps> = ({
                   trimmed.startsWith("(") ||
                   trimmed.toLowerCase().startsWith("habilidade");
 
+                const text = trimmed.replace(
+                  /^(Competência|Competências|Habilidade|Habilidades):\s*/i,
+                  "",
+                );
+
                 if (isObjeto) {
                   currentGroup = {
                     object: trimmed.replace(
                       /^(Objeto de conhecimento|Objetos de conhecimento):\s*/i,
                       "",
                     ),
-                    children: [],
+                    competencias: [],
                   };
                   groups.push(currentGroup);
+                  currentCompetencia = null;
                 } else if (currentGroup) {
-                  const type = isCompetencia
-                    ? "competencia"
-                    : isHabilidade
-                      ? "habilidade"
-                      : "conteudo";
-                  const text = trimmed.replace(
-                    /^(Competência|Competências|Habilidade|Habilidades):\s*/i,
-                    "",
-                  );
-                  currentGroup.children.push({ type, text });
+                  if (isCompetencia) {
+                    currentCompetencia = { text, habilidades: [] };
+                    currentGroup.competencias.push(currentCompetencia);
+                  } else if (isHabilidade) {
+                    if (!currentCompetencia) {
+                      currentCompetencia = { text: "", habilidades: [] };
+                      currentGroup.competencias.push(currentCompetencia);
+                    }
+                    currentCompetencia.habilidades.push({ text });
+                  }
                 } else {
-                  const type = isCompetencia
-                    ? "competencia"
-                    : isHabilidade
-                      ? "habilidade"
-                      : "conteudo";
-                  const text = trimmed.replace(
-                    /^(Competência|Competências|Habilidade|Habilidades):\s*/i,
-                    "",
-                  );
-                  groups.push({ object: "", children: [{ type, text }] });
-                  currentGroup = groups[groups.length - 1];
+                  if (isCompetencia) {
+                    currentGroup = { object: "", competencias: [] };
+                    groups.push(currentGroup);
+                    currentCompetencia = { text, habilidades: [] };
+                    currentGroup.competencias.push(currentCompetencia);
+                  } else if (isHabilidade) {
+                    if (!currentGroup) {
+                      currentGroup = { object: "", competencias: [] };
+                      groups.push(currentGroup);
+                    }
+                    if (!currentCompetencia) {
+                      currentCompetencia = { text: "", habilidades: [] };
+                      currentGroup.competencias.push(currentCompetencia);
+                    }
+                    currentCompetencia.habilidades.push({ text });
+                  }
                 }
               });
 
@@ -581,6 +590,7 @@ export const CurriculumLibraryView: React.FC<CurriculumLibraryViewProps> = ({
                     <div className="space-y-6 lg:space-y-10 pt-2">
                       {groups.map((group, gIdx) => (
                         <div key={gIdx} className="space-y-4">
+                          {/* Nível 1: Objeto de Conhecimento (maior) */}
                           {group.object && (
                             <div className="relative p-4 lg:p-6 border-2 border-[#E7609F]/20 bg-[#E7609F]/5 rounded-[16px] lg:rounded-[20px] transition-all hover:border-[#E7609F]/40 group/obj">
                               <div className="flex items-start gap-3 lg:gap-5">
@@ -601,65 +611,64 @@ export const CurriculumLibraryView: React.FC<CurriculumLibraryViewProps> = ({
                             </div>
                           )}
 
-                          <div
-                            className={cn(
-                              "grid grid-cols-1 gap-3 lg:gap-4",
-                              group.object &&
-                                "pl-4 lg:pl-8 border-l-2 border-zinc-100 ml-3 lg:ml-5",
-                            )}
-                          >
-                            {group.children.map((child, cIdx) => (
-                              <div
-                                key={cIdx}
-                                className={cn(
-                                  "relative p-4 lg:p-6 border-2 rounded-[16px] lg:rounded-[20px] flex items-start justify-between gap-4 lg:gap-6 group/line transition-all",
-                                  child.type === "habilidade"
-                                    ? "bg-[#94579E]/10 border-[#94579E]/20 hover:border-[#94579E]/40"
-                                    : child.type === "competencia"
-                                      ? "bg-[#4C76BA]/10 border-[#4C76BA]/20 hover:border-[#4C76BA]/40"
-                                      : "bg-white border-zinc-100 hover:border-zinc-200",
-                                )}
-                              >
-                                <div className="flex items-start gap-3 lg:gap-5 flex-1">
-                                  <div
-                                    className={cn(
-                                      "size-2 rounded-full mt-2 shrink-0",
-                                      child.type === "habilidade"
-                                        ? "bg-[#94579E]"
-                                        : child.type === "competencia"
-                                          ? "bg-[#4C76BA]"
-                                          : "bg-zinc-400",
-                                    )}
-                                  />
-                                  <div className="space-y-1">
-                                    <span
-                                      className={cn(
-                                        "text-[9px] lg:text-[10px] font-black uppercase tracking-[1px] lg:tracking-[2px]",
-                                        child.type === "habilidade"
-                                          ? "text-[#94579E]"
-                                          : child.type === "competencia"
-                                            ? "text-[#4C76BA]"
-                                            : "text-zinc-400",
-                                      )}
-                                    >
-                                      {child.type === "habilidade"
-                                        ? "Habilidade"
-                                        : child.type === "competencia"
-                                          ? "Competência"
-                                          : "Conteúdo"}
-                                    </span>
-                                    <p className="text-[14px] lg:text-[16px] font-medium text-[#1B2C49] leading-relaxed">
-                                      <span dangerouslySetInnerHTML={{ __html: child.text }} />
-                                    </p>
+                          {/* Nível 2 e 3: Competências (dentro do Objeto) e Habilidades (dentro da Competência) - efeito escada */}
+                          {group.competencias.map((comp, cIdx) => (
+                            <div
+                              key={cIdx}
+                              className={cn(
+                                "space-y-3",
+                                group.object && "pl-4 lg:pl-6 border-l-2 border-[#4C76BA]/20 ml-3 lg:ml-5",
+                              )}
+                            >
+                              {/* Nível 2: Competência (dentro do Objeto) */}
+                              {comp.text && (
+                                <div className="relative p-4 lg:p-6 border-2 border-[#4C76BA]/20 bg-[#4C76BA]/5 rounded-[14px] lg:rounded-[18px] transition-all hover:border-[#4C76BA]/40">
+                                  <div className="flex items-start gap-3 lg:gap-5">
+                                    <div className="size-2 rounded-full mt-2 shrink-0 bg-[#4C76BA]" />
+                                    <div className="space-y-1 flex-1">
+                                      <span className="text-[9px] lg:text-[10px] font-black uppercase tracking-[1px] lg:tracking-[2px] text-[#4C76BA]">
+                                        Competência
+                                      </span>
+                                      <p className="text-[14px] lg:text-[16px] font-medium text-[#1B2C49] leading-relaxed">
+                                        <span dangerouslySetInnerHTML={{ __html: comp.text }} />
+                                      </p>
+                                    </div>
+                                    <CopyButton
+                                      text={comp.text.replace(/<[^>]+>/g, "")}
+                                      className="hidden sm:flex"
+                                    />
                                   </div>
                                 </div>
-                                <CopyButton
-                                  text={child.text.replace(/<[^>]+>/g, "")}
-                                  className="hidden sm:flex"
-                                />
-                              </div>
-                            ))}
-                          </div>
+                              )}
+
+                              {/* Nível 3: Habilidades (dentro da Competência) - mais indentado */}
+                              {comp.habilidades.map((hab, hIdx) => (
+                                <div
+                                  key={hIdx}
+                                  className={cn(
+                                    "relative p-4 lg:p-6 border-2 border-[#94579E]/20 bg-[#94579E]/5 rounded-[12px] lg:rounded-[16px] flex items-start justify-between gap-4 lg:gap-6 transition-all hover:border-[#94579E]/40",
+                                    "pl-6 lg:pl-8 border-l-2 border-[#94579E]/20 ml-4 lg:ml-6",
+                                  )}
+                                >
+                                  <div className="flex items-start gap-3 lg:gap-5 flex-1">
+                                    <div className="size-2 rounded-full mt-2 shrink-0 bg-[#94579E]" />
+                                    <div className="space-y-1">
+                                      <span className="text-[9px] lg:text-[10px] font-black uppercase tracking-[1px] lg:tracking-[2px] text-[#94579E]">
+                                        Habilidade
+                                      </span>
+                                      <p className="text-[14px] lg:text-[16px] font-medium text-[#1B2C49] leading-relaxed">
+                                        <span dangerouslySetInnerHTML={{ __html: hab.text }} />
+                                      </p>
+                                    </div>
+                                  </div>
+                                  <CopyButton
+                                    text={hab.text.replace(/<[^>]+>/g, "")}
+                                    className="hidden sm:flex"
+                                  />
+                                </div>
+                              ))}
+                            </div>
+                          ))}
                         </div>
                       ))}
                     </div>

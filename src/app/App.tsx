@@ -143,7 +143,7 @@ const CURRICULUM_DATA: Record<string, any> = {
           {
             title: "Pensamento Computacional",
             description:
-              "Competência: Estimular a curiosidade, a imaginação e a autoria nas pequenas criações.\nCompetência: Desenvolver a tolerância ao erro e o prazer em tentar de novo.\nCompetência: Construir junto, compartilhar e cuidar dos materiais e do grupo.\nHabilidade: (EI03CO01) Reconhecer padrão de repetição em sequência de sons, movimentos, desenhos.\nHabilidade: (EI03CO02) Expressar as etapas para a realização de uma tarefa de forma clara e ordenada.\nHabilidade: (EI03CO03) Experienciar a execução de algoritmos brincando com objetos (des)plugados.\nHabilidade: (EI03CO04) Criar e representar algoritmos para resolver problemas.\nHabilidade: (EI03CO05) Comparar soluções algorítmicas para resolver um mesmo problema.\nHabilidade: (EI03CO06) Compreender decisões em dois estados (verdadeiro ou falso).",
+              "Competência: Estimular a curiosidade, a imaginação e a autoria nas pequenas criações. Desenvolver a tolerância ao erro e o prazer em tentar de novo. Construir junto, compartilhar e cuidar dos materiais e do grupo.\nHabilidade: (EI03CO01) Reconhecer padrão de repetição em sequência de sons, movimentos, desenhos.\nHabilidade: (EI03CO02) Expressar as etapas para a realização de uma tarefa de forma clara e ordenada.\nHabilidade: (EI03CO03) Experienciar a execução de algoritmos brincando com objetos (des)plugados.\nHabilidade: (EI03CO04) Criar e representar algoritmos para resolver problemas.\nHabilidade: (EI03CO05) Comparar soluções algorítmicas para resolver um mesmo problema.\nHabilidade: (EI03CO06) Compreender decisões em dois estados (verdadeiro ou falso).",
           },
         ],
       },
@@ -165,7 +165,7 @@ const CURRICULUM_DATA: Record<string, any> = {
           {
             title: "Cultura Digital e Midiática",
             description:
-              "Competência: Estimular a reflexão e rodas de conversa sobre desenvolver empatia, responsabilidade social e habilidades socioemocionais, moldando cidadãos para uma convivência ética, de forma lúdica.\nHabilidade: (EI03CO10) Utilizar tecnologia digital de maneira segura, consciente e respeitosa.\nHabilidade: (EI03CO11) Adotar hábitos saudáveis de uso de artefatos computacionais, seguindo recomendações de órgãos de saúde competentes.",
+              "Competência: Estimular a reflexão e rodas de coversa sobre desenvolver empatia, responsabilidade social e habilidades socioemocionais, moldando cidadãos para uma convivência ética, de forma lúdica.\nHabilidade: (EI03CO10) Utilizar tecnologia digital de maneira segura, consciente e respeitosa.\nHabilidade: (EI03CO11) Adotar hábitos saudáveis de uso de artefatos computacionais, seguindo recomendações de órgãos de saúde competentes.",
           },
         ],
       },
@@ -254,7 +254,7 @@ const CURRICULUM_DATA: Record<string, any> = {
           {
             title: "5º Ano",
             description:
-              "Objeto de conhecimento: Arquitetura de computadores\nCompetência: Explorar tecnologias de Inteligência Artificial e compreender como aprendem.\nHabilidade: (NavEF05CO02) Reconhecer que, para um computador realizar tarefas, ele se comunica com o mundo exterior com o uso de interfaces físicas\nHabilidade: (EF05CO05) Identificar os componentes principais de um computador (dispositivos de entrada/saída, processadores e armazenamento).\nObjeto de conhecimento: Armazenamento\nCompetência: Reconhecer sistemas de armazenamento no dia a dia.\nHabilidade: (EF05CO06) Reconhecer que os dados podem ser armazenados em um dispositivo local ou remoto.\nObjeto de conhecimento: Sistema\nCompetência: Compreender sistemas, computação em nuvem, entrada e saída de dados, de forma lúdica.\nHabilidade: (EF05CO07) Reconhecer a necessidade de um sistema operacional para a execução de programas e gerenciamento do hardware.",
+              "Objeto de conhecimento: Arquitetura de computadores\nCompetência: Explorar tecnologias de Inteligência Artificial e compreender como aprendem.\nHabilidade: (NavEF05CO02) Reconhecer que, para um computador realizar tarefas, ele se comunica com o mundo exterior com o uso de interfaces físicas.\nHabilidade: (EF05CO05) Identificar os componentes principais de um computador (dispositivos de entrada/saída, processadores e armazenamento).\nObjeto de conhecimento: Armazenamento\nCompetência: Reconhecer sistemas de armazenamento no dia a dia.\nHabilidade: (EF05CO06) Reconhecer que os dados podem ser armazenados em um dispositivo local ou remoto.\nObjeto de conhecimento: Sistema\nCompetência: Compreender sistemas, computação em nuvem, entrada e saída de dados, de forma lúdica.\nHabilidade: (EF05CO07) Reconhecer a necessidade de um sistema operacional para a execução de programas e gerenciamento do hardware.",
           },
         ],
       },
