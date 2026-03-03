@@ -351,10 +351,12 @@ export const CurriculumLibraryView: React.FC<CurriculumLibraryViewProps> = ({
     title,
     items,
     isGeneral,
+    isEducacaoInfantil,
   }: {
     title: string;
     items: any[];
     isGeneral?: boolean;
+    isEducacaoInfantil?: boolean;
   }) => {
     if (items.length === 0) return null;
 
@@ -648,14 +650,14 @@ export const CurriculumLibraryView: React.FC<CurriculumLibraryViewProps> = ({
                                 </div>
                               ) : (
                                 <>
-                                  {/* Nível 2: Competência (dentro do Objeto) */}
+                                  {/* Nível 2: Competência (dentro do Objeto) - Educação Infantil usa "Objetivo de Aprendizagem" */}
                                   {comp.text && (
                                     <div className="relative p-4 lg:p-6 border-2 border-[#4C76BA]/20 bg-[#4C76BA]/5 rounded-[14px] lg:rounded-[18px] transition-all hover:border-[#4C76BA]/40">
                                       <div className="flex items-start gap-3 lg:gap-5">
                                         <div className="size-2 rounded-full mt-2 shrink-0 bg-[#4C76BA]" />
                                         <div className="space-y-1 flex-1">
                                           <span className="text-[9px] lg:text-[10px] font-black uppercase tracking-[1px] lg:tracking-[2px] text-[#4C76BA]">
-                                            Competência
+                                            {isEducacaoInfantil ? "Objetivo de Aprendizagem" : "Competência"}
                                           </span>
                                           <p className="text-[14px] lg:text-[16px] font-medium text-[#1B2C49] leading-relaxed">
                                             <span dangerouslySetInnerHTML={{ __html: comp.text }} />
@@ -1250,6 +1252,7 @@ export const CurriculumLibraryView: React.FC<CurriculumLibraryViewProps> = ({
                           title={section.title}
                           items={section.items}
                           isGeneral={stage === "general"}
+                          isEducacaoInfantil={stage === "ei"}
                         />
                       )}
                       {section.type === "list" && (
