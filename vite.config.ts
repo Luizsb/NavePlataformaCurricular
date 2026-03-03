@@ -17,8 +17,8 @@ export default defineConfig({
     },
   },
 
-  // Caminho base para GitHub Pages: /<nome-do-repo>/
-  base: '/NavePlataformaCurricular/',
+  // Base: GitHub Pages (/NavePlataformaCurricular/) ou GitLab Pages (/nav/bcci_nav/)
+  base: process.env.VITE_BASE_PATH || '/NavePlataformaCurricular/',
 
   // File types to support raw imports. Nunca adicione .css, .tsx ou .ts aqui.
   assetsInclude: ['**/*.svg', '**/*.csv'],
