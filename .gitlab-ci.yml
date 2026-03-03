@@ -1,12 +1,12 @@
 # GitLab Pages - Deploy da Nova BCCI (Vite + React)
-# O site será publicado em: https://arco7951503.gitlab.io/nav/bcci_nav/
+# O site será publicado em: https://bcci-nav-75a666.gitlab.io/
 
 stages:
   - build
   - deploy
 
 variables:
-  VITE_BASE_PATH: "/nav/bcci_nav/"
+  VITE_BASE_PATH: "/"
 
 build:
   stage: build
