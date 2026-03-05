@@ -14,8 +14,8 @@ const CURRICULUM_DATA: Record<string, any> = {
       valor_central:
         "Autonomia intelectual e consciência ética através da inovação.",
       description_blocks: [
-        "Nossa base curricular foi desenhada para formar sujeitos criativos, críticos e prontos para transformar o mundo através da inovação.",
-        "A proposta visa a autonomia intelectual, à consciência ética e a capacidade de imaginar e realizar com propósito, unindo pensamento crítico, técnica, imaginação e compromisso social.",
+        "Nossa base Curricular foi desenhada para formar sujeitos criativos, críticos e prontos para transformar o mundo através da inovação.",
+        "A proposta visa a autonomia intelectual, à consciência ética e à capacidade de imaginar e realizar com propósito, unindo pensamento crítico, técnica, imaginação e compromisso social.",
       ],
     },
     sections: [
@@ -113,7 +113,7 @@ const CURRICULUM_DATA: Record<string, any> = {
       },
       {
         title: "Qualidades de Caráter",
-        subtitle: "Como nós lidamos com o mundo a nossa volta",
+        subtitle: "Como lidamos com o mundo a nossa volta",
         skills: [
           "Alfabetização e leitura",
           "Matemática",
@@ -176,7 +176,7 @@ const CURRICULUM_DATA: Record<string, any> = {
           {
             title: "Design e Fabricação Digital",
             description:
-              "Competência: Promover experiências em que as crianças explorem, criem e expressem ideias por meio da construção e transformação de materiais, compreendendo que o ato de fabricar é também uma forma de pensar, comunicar e resolver problemas.\nHabilidade: (NavEI03CO01) Explorar diferentes materiais e ferramentas (papel, blocos, argila, sucata, tecidos etc.) para representar ideias, histórias ou personagens.\nHabilidade: (NavEI03CO02) Experimentar diferentes formas de montagem, encaixe, recorte e colagem para criar objetos e estruturas, incluindo de fabricação digital.\nHabilidade: (NavEI03CO03) Testar, ajustar e reconstruir suas criações, demonstrando persistência e prazer em tentar novamente.\nHabilidade: (NavEI03CO04) Utilizar recursos tecnológicos simples (câmeras fotográficas, objetos de cortadora laser e impressoras 3D) como extensão do ato de criar.",
+              "Competência: Promover experiências em que as crianças explorem, criem e expressem ideias por meio da construção e transformação de materiais, compreendendo que o ato de fabricar é também uma forma de pensar, comunicar e resolver problemas.\nHabilidade: (NavEI03CO01) Explorar diferentes materiais e ferramentas (papel, blocos, argila, sucata, tecidos etc.) para representar ideias, histórias ou personagens.\nHabilidade: (NavEI03CO02) Experimentar diferentes formas de montagem, encaixe, recorte e colagem para criar objetos e estruturas, incluindo de fabricação digital.\nHabilidade: (NavEI03CO03) Testar, ajustar e reconstruir suas criações, demonstrando persistência e prazer em tentar novamente.\nHabilidade: (NavEI03CO04) Utilizar recursos tecnológicos simples (câmeras fotográficas, objetos de cortadora a laser e impressoras 3D) como extensão do ato de criar.",
           },
         ],
       },
@@ -192,7 +192,7 @@ const CURRICULUM_DATA: Record<string, any> = {
       description_blocks: [
         "O Ensino Fundamental Anos Iniciais tem como propósito desenvolver nos estudantes capacidades de compreensão acerca da computação como uma área de conhecimento, que contribui para explicar o mundo atual e, por meio do domínio da sua linguagem, tornar-se um agente consciente de transformação.",
         "O foco está em formar sujeitos que se expressam e partilham informações, ideias, sentimentos e soluções computacionais utilizando diferentes linguagens e tecnologias digitais de forma criativa, crítica, significativa, reflexiva e ética. A tecnologia é vista como espaço de exploração, descoberta e reflexão.",
-        "Essa etapa organiza-se em uma progressão intencional de competências e habilidades, distribuídas nos quatro eixos estruturantes: Pensamento Computacional, Mundo Digital e IA, Cultura Digital e Midiática, e Design e Fabricação Digital — articulando teoria e prática com base em projetos.",
+        "Essa etapa organiza-se em uma progressão intencional de competências e habilidades, distribuídas nos quatro eixos estruturantes: Pensamento Computacional, Mundo Digital e IA, Cultura Digital e Midiática, e Design e Fabricação Digital (articulando teoria e prática com base em projetos).",
       ],
     },
     sections: [
@@ -332,7 +332,7 @@ const CURRICULUM_DATA: Record<string, any> = {
         "O Ensino Fundamental Anos Finais tem como propósito desenvolver nos estudantes uma relação investigativa e criadora com a tecnologia, entendendo-a não apenas como ferramenta, mas como uma construção social, cultural e histórica.",
         "Aqui, aprender com tecnologia significa pensar criticamente, experimentar e criar, compreendendo o impacto das inovações no cotidiano, nas relações humanas e no meio ambiente. O foco está em formar sujeitos curiosos, criativos e resilientes, que aprendem com o erro e valorizam o processo tanto quanto o resultado.",
         "A tecnologia é vista como espaço de exploração, descoberta e reflexão, onde o pensamento computacional e a cultura digital intensificam-se como meios de expressão, de resolução de problemas e de exercício da cidadania.",
-        "Essa etapa organiza-se em uma progressão intencional de competências e habilidades, distribuídas nos quatro eixos estruturantes: Pensamento Computacional, Mundo Digital e IA, Cultura Digital e Midiática, e Design e Fabricação Digital — articulando teoria e prática com base em projetos.",
+        "Essa etapa organiza-se em uma progressão intencional de competências e habilidades, distribuídas nos quatro eixos estruturantes: Pensamento Computacional, Mundo Digital e IA, Cultura Digital e Midiática, e Design e Fabricação Digital (articulando teoria e prática com base em projetos).",
       ],
     },
     sections: [
@@ -395,7 +395,7 @@ const CURRICULUM_DATA: Record<string, any> = {
           {
             title: "6º Ano",
             description:
-              "Objeto de conhecimento: Segurança e responsabilidade no uso da tecnologia\nCompetência: Entender que as tecnologias devem ser utilizadas de maneira segura, ética e responsável, respeitando direitos autorais,de imagem e as leis vigentes.\nHabilidade: (EF06CO09) Apresentar conduta e linguagem apropriadas ao se comunicar em ambiente digital, considerando a ética e o respeito.\nObjeto de conhecimento: Tecnologia Digital\nCompetência: Selecionar e utilizar tecnologias computacionais de forma a se expressar.\nHabilidade: (EF06CO10) Analisar o consumo de tecnologia na sociedade, compreendendo criticamente o caminho da produção dos recursos, bem como aspectos ligados à obsolescência e a sustentabilidade.\nObjeto de conhecimento: Saúde Digital\nCompetência: Utilizar a tecnologia de forma saudável.\nHabilidade: (NavEF06CO09) Refletir sobre o tempo de tela e o uso ético da internet.",
+              "Objeto de conhecimento: Segurança e responsabilidade no uso da tecnologia\nCompetência: Entender que as tecnologias devem ser utilizadas de maneira segura, ética e responsável, respeitando direitos autorais,de imagem e as leis vigentes.\nHabilidade: (EF06CO09) Apresentar conduta e linguagem apropriadas ao se comunicar em ambiente digital, considerando a ética e o respeito.\nObjeto de conhecimento: Tecnologia Digital\nCompetência: Selecionar e utilizar tecnologias computacionais de forma a se expressar.\nHabilidade: (EF06CO10) Analisar o consumo de tecnologia na sociedade, compreendendo criticamente o caminho da produção dos recursos, bem como aspectos ligados à obsolescência e à sustentabilidade.\nObjeto de conhecimento: Saúde Digital\nCompetência: Utilizar a tecnologia de forma saudável.\nHabilidade: (NavEF06CO09) Refletir sobre o tempo de tela e o uso ético da internet.",
           },
           {
             title: "7º Ano",
@@ -410,7 +410,7 @@ const CURRICULUM_DATA: Record<string, any> = {
           {
             title: "9º Ano",
             description:
-              "Objeto de conhecimento: Tecnologia digital e sociedade\nCompetência: Entender que as tecnologias devem ser utilizadas de maneira segura, ética e responsável.\nHabilidade: (EF09CO06) Analisar problemas sociais de sua cidade e estado a partir de ambientes digitais, propondo soluções.\nHabilidade: (EF09CO07) Avaliar aplicações e implicações políticas, socioambientais e culturais das tecnologias digitais para propor alternativas aos desafios do mundo contemporâneo, incluindo aqueles relativos ao mundo do trabalho.\n(EF09CO08) Discutir como a distribuição desigual de recursos de computação em uma economia global levanta questões de equidade, acesso e poder.			\nObjeto de conhecimento: Autoria em meio digital\nCompetência: Compreender que o meio digital favorece produções éticas.\nHabilidade: (EF09CO09) Criar ou utilizar conteúdo em meio digital, compreendendo questões éticas relacionadas a direitos autorais e de uso de imagem.\nObjeto de conhecimento: Qualidade da informação\nCompetência: Selecionar e utilizar tecnologias de forma crítica.\nHabilidade: (EF09CO10) Avaliar a veracidade, credibilidade e relevância da informação em seus diferentes formatos, sendo capaz de identificar o propósito pelo qual foi disseminada.\nObjeto de conhecimento: Educação midática e IA\nCompetência: Explorar o uso de ferramentas de IA para combater fake news.\nHabilidade: (NavEF09CO02) Desenvolver narrativas transmídia com uso de ferramentas de IA.\nHabilidade: (NavEF09CO03) Discutir dados pessoais, rastros digitais e privacidade em tempos de IA.\nHabilidade: (NavEF09CO04) Compreender o efeito das fake news e deepfake em tempos de IA.",
+              "Objeto de conhecimento: Tecnologia digital e sociedade\nCompetência: Entender que as tecnologias devem ser utilizadas de maneira segura, ética e responsável.\nHabilidade: (EF09CO06) Analisar problemas sociais de sua cidade e estado a partir de ambientes digitais, propondo soluções.\nHabilidade: (EF09CO07) Avaliar aplicações e implicações políticas, socioambientais e culturais das tecnologias digitais para propor alternativas aos desafios do mundo contemporâneo, incluindo aqueles relativos ao mundo do trabalho.\n(EF09CO08) Discutir como a distribuição desigual de recursos de computação em uma economia global levanta questões de equidade, acesso e poder.			\nObjeto de conhecimento: Autoria em meio digital\nCompetência: Compreender que o meio digital favorece produções éticas.\nHabilidade: (EF09CO09) Criar ou utilizar conteúdo em meio digital, compreendendo questões éticas relacionadas a direitos autorais e de uso de imagem.\nObjeto de conhecimento: Qualidade da informação\nCompetência: Selecionar e utilizar tecnologias de forma crítica.\nHabilidade: (EF09CO10) Avaliar a veracidade, credibilidade e relevância da informação em seus diferentes formatos, sendo capaz de identificar o propósito pelo qual foi disseminada.\nObjeto de conhecimento: Educação midiática e IA\nCompetência: Explorar o uso de ferramentas de IA para combater fake news.\nHabilidade: (NavEF09CO02) Desenvolver narrativas transmídia com uso de ferramentas de IA.\nHabilidade: (NavEF09CO03) Discutir dados pessoais, rastros digitais e privacidade em tempos de IA.\nHabilidade: (NavEF09CO04) Compreender o efeito das fake news e deepfake em tempos de IA.",
           },
         ],
       },
@@ -451,9 +451,9 @@ const CURRICULUM_DATA: Record<string, any> = {
         "Autoria e inovação – projeção de soluções complexas com ética, propósito e IA integrada.",
       description_blocks: [
         "O Ensino Médio tem como propósito desafiar os estudantes a analisar, criar e implementar soluções complexas que integrem inteligência artificial, design e pensamento computacional, articulando o conhecimento científico com a criatividade, a ética e o protagonismo juvenil. Essa etapa consolida o percurso formativo iniciado no Ensino Fundamental, estimulando a autonomia intelectual, a colaboração e o pensamento crítico diante dos desafios contemporâneos.",
-        "Por meio de projetos interdisciplinares e metodologias ativas, os estudantes investigam problemas reais e elaboram soluções digitais sustentáveis e éticas, expressando-se através de linguagens tecnológicas diversas. Propósito ético e social da criação deve orientar o uso consciente das tecnologias emergentes e do poder transformador da Inteligência Artificial.",
+        "Por meio de projetos interdisciplinares e metodologias ativas, os estudantes investigam problemas reais e elaboram soluções digitais sustentáveis e éticas, expressando-se através de linguagens tecnológicas diversas. O propósito ético e social da criação deve orientar o uso consciente das tecnologias emergentes e do poder transformador da Inteligência Artificial.",
         "A aprendizagem fortalece-se como uma experiência de autoria e impacto, em que os jovens constroem startups educacionais, campanhas digitais, produtos inovadores e portfólios multimodais que expressam sua identidade, visão de mundo e compromisso com a coletividade.",
-        "Essa etapa organiza-se em uma progressão intencional de competências e habilidades, distribuídas nos quatro eixos estruturantes: Pensamento Computacional, Mundo Digital e IA, Cultura Digital e Midiática, e Design com Fabricação Digital — articulando teoria e prática com base em projetos.",
+        "Essa etapa organiza-se em uma progressão intencional de competências e habilidades, distribuídas nos quatro eixos estruturantes: Pensamento Computacional, Mundo Digital e IA, Cultura Digital e Midiática, e Design com Fabricação Digital (articulando teoria e prática com base em projetos).",
       ],
     },
     sections: [
@@ -537,7 +537,7 @@ const CURRICULUM_DATA: Record<string, any> = {
           {
             title: "3ª série",
             description:
-              "Objeto de conhecimento: Inovação e empreendedorismo\nCompetência: Empreender com inovação e impacto social, por meio da fabricação digital e da Inteligência Artificial aplicada.\nHabilidade: (NavEM13CO27) Analisar o papel das tecnologias digitais e da Inteligência Artificial no mundo do trabalho e na inovação social.\nHabilidade: (NavEM13CO28) Conhecer os fundamentos da Inteligência Artificial e utilizá-la para aprimorar produtos e processos criativos.\nHabilidade: (NavEM13CO29) Desenvolver MVPs (produtos mínimos viáveis) com fabricação digital, automação e Inteligência Artificial aplicada.\nHabilidade: (NavEM13CO30) Criar projetos de empreendedorismo, considerando sustentabilidade e ética tecnológica.",
+              "Objeto de conhecimento: Inovação e empreendedorismo\nCompetência: Empreender com inovação e impacto social, por meio da fabricação digital e da inteligência artificial aplicada.\nHabilidade: (NavEM13CO27) Analisar o papel das tecnologias digitais e da Inteligência Artificial no mundo do trabalho e na inovação social.\nHabilidade: (NavEM13CO28) Conhecer os fundamentos da Inteligência Artificial e utilizá-la para aprimorar produtos e processos criativos.\nHabilidade: (NavEM13CO29) Desenvolver MVPs (produtos mínimos viáveis) com fabricação digital, automação e Inteligência Artificial aplicada.\nHabilidade: (NavEM13CO30) Criar projetos de empreendedorismo, considerando sustentabilidade e ética tecnológica.",
           },
         ],
       },

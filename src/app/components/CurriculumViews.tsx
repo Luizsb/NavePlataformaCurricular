@@ -885,7 +885,7 @@ export const CurriculumLibraryView: React.FC<CurriculumLibraryViewProps> = ({
             },
             {
               title: "Qualidades de Caráter",
-              subtitle: "Como nós lidamos com o mundo a nossa volta",
+              subtitle: "Como lidamos com o mundo a nossa volta",
               skills: [
                 "Alfabetização e leitura",
                 "Matemática",
@@ -1518,7 +1518,7 @@ export const CurriculumLibraryView: React.FC<CurriculumLibraryViewProps> = ({
                   <p className="text-[16px] leading-[1.8] text-[#1B2C49]/80 font-light">
                     A{" "}
                     <span className="font-bold text-[#1B2C49]">
-                      Nova Base curricular para Cultura de Inovação (Nova BCCI)
+                      Nova Base Curricular para Cultura de Inovação (Nova BCCI)
                     </span>{" "}
                     propõe um alinhamento entre a Base Nacional Comum Curricular
                     (BNCC) da Computação, as Habilidades do Século XXI (
@@ -1533,7 +1533,7 @@ export const CurriculumLibraryView: React.FC<CurriculumLibraryViewProps> = ({
                   O objetivo da Nova BCCI é orientar uma Educação Tecnológica voltada à formação de sujeitos criativos, críticos e inventivos, capazes de compreender e transformar o mundo por meio do fazer, do pensar e do conviver. Busca-se desenvolver a capacidade de expressar ideias e criar soluções inovadoras para problemas reais, utilizando tecnologias digitais, como inteligência artificial e computação criativa. 
                   </p>
                   <p className="text-[16px] leading-[1.8] text-[#1B2C49]/80 font-light">
-                  Mais do que acumular informações, aprender passa a significar criar, experimentar e refletir sobre o processo criativo. A proposta visa, portanto, à autonomia intelectual, à consciência ética e a capacidade de imaginar e realizar com propósito, unindo pensamento crítico, técnica, imaginação e compromisso social. 
+                  Mais do que acumular informações, aprender passa a significar criar, experimentar e refletir sobre o processo criativo. A proposta visa, portanto, à autonomia intelectual, à consciência ética e à capacidade de imaginar e realizar com propósito, unindo pensamento crítico, técnica, imaginação e compromisso social. 
                   </p>
                   <div className="p-8 rounded-[32px] bg-[#E7609F]/5 border-2 border-[#E7609F]/10">
                     <p className="text-[16px] leading-[1.8] text-[#1B2C49]/80 font-medium">

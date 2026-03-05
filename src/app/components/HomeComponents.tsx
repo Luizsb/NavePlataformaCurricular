@@ -18,7 +18,7 @@ export const Hero: React.FC = () => {
           className="text-center"
         >
           <h1 className="mx-auto max-w-3xl text-[32px] font-black tracking-tight text-[#4c1d95] leading-tight mb-8">
-            Base curricular da inovação Nave a vela (Nova BCCI)
+            Base Curricular da inovação Nave a vela (Nova BCCI)
           </h1>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8 mb-16">
