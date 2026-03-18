@@ -191,8 +191,8 @@ const CURRICULUM_DATA: Record<string, any> = {
         "Interdisciplinaridade lúdica — ciência, arte e movimento integrados.",
       description_blocks: [
         "O Ensino Fundamental Anos Iniciais tem como propósito desenvolver nos estudantes capacidades de compreensão acerca da computação como uma área de conhecimento, que contribui para explicar o mundo atual e, por meio do domínio da sua linguagem, tornar-se um agente consciente de transformação.",
-        "O foco está em formar sujeitos que se expressam e partilham informações, ideias, sentimentos e soluções computacionais utilizando diferentes linguagens e tecnologias digitais de forma criativa, crítica, significativa, reflexiva e ética. A tecnologia é vista como espaço de exploração, descoberta e reflexão.",
-        "Essa etapa organiza-se em uma progressão intencional de competências e habilidades, distribuídas nos quatro eixos estruturantes: Pensamento Computacional, Mundo Digital e IA, Cultura Digital e Midiática, e Design e Fabricação Digital (articulando teoria e prática com base em projetos).",
+        "O foco está em formar sujeitos que se expressam e partilham informações, ideias, sentimentos e soluções computacionais utilizando diferentes linguagens e tecnologias digitais de forma criativa, crítica, significativa, reflexiva e ética. A tecnologia é vista como espaço de exploração, descoberta e reflexão, onde o pensamento computacional e a cultura digital tornam-se meios de expressão, de resolução de problemas e de exercício da cidadania.",
+        "Essa etapa organiza-se em uma progressão intencional de competências e habilidades, distribuídas nos quatro eixos estruturantes: Pensamento Computacional, Mundo Digital e IA, Cultura Digital e Midiática, e Design com Fabricação Digital (articulando teoria e prática com base em projetos).",
       ],
     },
     sections: [
@@ -296,7 +296,7 @@ const CURRICULUM_DATA: Record<string, any> = {
           {
             title: "1º Ano",
             description:
-              "Objeto de conhecimento: Experimentação e observação do fazer manual\nCompetência: Explorar materiais, formas e texturas para compreender que o design e a fabricação são formas de criar soluções para o cotidiano.\nHabilidade: (NavEF01CO03) Realizar montagem e desmontagem de objetos simples.\nHabilidade: (NavEF01CO04) Experimentar combinações de materiais (papel, sucata, argila). (Ex. engenharia reversa)",
+              "Objeto de conhecimento: Experimentação e observação do fazer manual\nCompetência: Explorar materiais, formas e texturas para compreender que o design e a fabricação são maneiras de criar soluções para o cotidiano.\nHabilidade: (NavEF01CO03) Realizar montagem e desmontagem de objetos simples.\nHabilidade: (NavEF01CO04) Experimentar combinações de materiais (papel, sucata, argila). (Ex. engenharia reversa)",
           },
           {
             title: "2º Ano",
@@ -462,17 +462,17 @@ const CURRICULUM_DATA: Record<string, any> = {
         type: "detailed",
         items: [
           {
-            title: "1ª série",
+            title: "1ª Série",
             description:
               "Objeto de conhecimento: Algoritmos e estruturas\nCompetência: Compreender as possibilidades e os limites da computação para resolver problemas.\nHabilidade: (EM13CO04) Reconhecer o conceito de metaprogramação como uma forma de generalização na construção de programas, permitindo que algoritmos sejam entrada ou saída para outros algoritmos.\nHabilidade: (NavEM13CO01) Aplicar o raciocínio lógico e o pensamento algorítmico para decompor problemas e estruturar soluções com aplicações de programação.\nObjeto de conhecimento: Lógica computacional e Linguagens de programação\nCompetência: Aplicar o raciocínio lógico e o pensamento algorítmico para decompor problemas e estruturar soluções em diversos níveis de abstração.\nHabilidade: (NavEM13CO02) Elaborar e testar programas utilizando linguagens de programação textuais.\nHabilidade: (EM13CO02) Explorar e construir a solução de problemas por meio de refinamentos, utilizando diversos níveis de abstração desde a especificação até a implementação.",
           },
           {
-            title: "2ª série",
+            title: "2ª Série",
             description:
               "Objeto de conhecimento: Modelagem algorítmica e tomada de decisão\nCompetência: Integrar o pensamento computacional ao uso de dados e à automação inteligente, incluindo contextos da Inteligência Artificial.\nHabilidade: (EM13CO03) Identificar o comportamento dos algoritmos no que diz respeito ao consumo de recursos como tempo de execução, espaço de memória e energia, entre outros.\nHabilidade: (EM13CO05) Identificar os limites da computação para diferenciar o que pode ou não ser automatizado, buscando uma compreensão mais ampla dos limites dos processos mentais envolvidos na resolução de problemas.\nObjeto de conhecimento: Dados, Redes e Ética Digital\nCompetência: Empregar Análise de Dados e Fundamentos da Internet.\nHabilidade: (EM13CO03) Identificar o comportamento dos algoritmos no que diz respeito ao consumo de recursos como tempo de execução, espaço de memória e energia, entre outros.\nHabilidade: (EM13CO06) Avaliar software levando em consideração diferentes características e métricas associadas.",
           },
           {
-            title: "3ª série",
+            title: "3ª Série",
             description:
               "Objeto de conhecimento: Robótica e Internet das Coisas (IoT)\nCompetência: Desenvolver, de forma ética e responsável, sistemas computacionais avançados (Robótica e IoT) que integrem Inteligência Artificial.\nHabilidade: (NavEM13CO22) Desenvolver sistemas integrando Inteligência Artificial, automação e sensores.\nHabilidade: (EM13CO15) Analisar a interação entre usuários e artefatos computacionais, abordando aspectos da experiência do usuário e promovendo reflexão sobre a qualidade do uso dos artefatos nas esferas do trabalho, do lazer e do estudo.\nObjeto de conhecimento: Ética em algoritmos, sustentabilidade tecnológica e IA\nCompetência: Expressar e partilhar informações, ideias e soluções computacionais utilizando diferentes plataformas da Computação de forma fluente, criativa, crítica, significativa,  incluindo uma camada de Inteligência Artificial.\nHabilidade: (EM13CO16) Desenvolver projetos com robótica, utilizando artefatos físicos ou simuladores.\nHabilidade: (EM13CO18) Planejar e gerenciar projetos integrados às áreas de conhecimento, de forma colaborativa, solucionando problemas, usando diversos artefatos computacionais.\nHabilidade: (EM13CO19) Expor, argumentar e negociar propostas, produtos e serviços, utilizando diferentes mídias e ferramentas digitais.",
           },
@@ -483,17 +483,17 @@ const CURRICULUM_DATA: Record<string, any> = {
         type: "detailed",
         items: [
           {
-            title: "1ª série",
+            title: "1ª Série",
             description:
               "Objeto de conhecimento: Fundamentos da IA\nCompetência: Elaborar e testar programas utilizando linguagens textuais, analisando os princípios básicos de Inteligência Artificial.\nHabilidade: (NavEM13CO03) Analisar e experimentar princípios básicos de Inteligência Artificial aplicados à programação, compreendendo como os algoritmos aprendem, classificam e tomam decisões a partir de dados.\nObjeto de conhecimento: Programação, automação e IA no mundo digital\nCompetência: Desenvolver projetos para investigar desafios do mundo empregando a programação e simulação, podendo introduzir Inteligência Artificial.\nHabilidade: (NavEM13CO04) Refinar e abstrair problemas, da especificação à implementação.\nHabilidade: (NavEM13CO05) Criar projetos com Inteligência Artificial e automação criativa.\nHabilidade: (EM13CO09) Identificar tecnologias digitais, sua presença e formas de uso, nas diferentes atividades no mundo do trabalho.",
           },
           {
-            title: "2ª série",
+            title: "2ª Série",
             description:
               "Objeto de conhecimento: Tecnologias emergentes, dados e ética digital\nCompetência: Utilizar tecnologias emergentes, dados e Inteligência Artificial para projetar produtos digitais funcionais e éticos.\nHabilidade: (NavEM13CO13) Compreender como mudanças tecnológicas e uso de Inteligência Artificial afetam a segurança digital e a privacidade, adotando práticas éticas de proteção de dados.\nHabilidade: (NavEM13CO14) Investigar e aplicar tecnologias emergentes (IA, RA, RV, IoT) para criar produtos digitais funcionais e responsáveis.\nHabilidade: (EM13CO08) Entender como mudanças na tecnologia afetam a segurança, incluindo novas maneiras de preservar sua privacidade e dados pessoais on-line, reportando suspeitas e buscando ajuda em situações de risco.",
           },
           {
-            title: "3ª série",
+            title: "3ª Série",
             description:
               "Objeto de conhecimento: Empreendedorismo pessoal e inovação com IA\nCompetência: Criar soluções tecnológicas sustentáveis e empreendedoras com impacto social, aplicando a Inteligência Artificial.\nHabilidade: (NavEM13CO23) Desenvolver MVPs com IA, IoT e automação.\nHabilidade: (NavEM13CO24) Gerir projetos e planos de inovação escolar.\nHabilidade: (NavEM13CO25) Empreender soluções de impacto social e ambiental. \nHabilidade: (EM13CO09) Identificar tecnologias digitais, sua presença e formas de uso, nas diferentes atividades no mundo do trabalho.\nHabilidade: (EM13CO10) Conhecer os fundamentos da Inteligência Artificial, comparando-a com a inteligência humana, analisando suas potencialidades, riscos e limites.",
           },
@@ -504,17 +504,17 @@ const CURRICULUM_DATA: Record<string, any> = {
         type: "detailed",
         items: [
           {
-            title: "1ª série",
+            title: "1ª Série",
             description:
               "Objeto de conhecimento: Alfabetização midiática e informacional\nCompetência: Analisar criticamente informações e narrativas digitais, reconhecendo influências sociais e culturais.\nHabilidade: (NavEM13CO06) Analisar fontes e dados digitais.\nHabilidade: (NavEM13CO07) Aplicar cidadania digital de forma eficiente: fake news, bolhas informacionais e curadoria digital.\nHabilidade: (NavEM13CO08) Explorar conceitos introdutórios de Inteligência Artificial, reconhecendo suas potencialidades e limites éticos aplicados a soluções de aprendizagem.\nHabilidade: (EM13CO20) Criar conteúdos, disponibilizando-os em ambientes virtuais para publicação e compartilhamento, avaliando a confiabilidade e as consequências da disseminação dessas informações.\nHabilidade: (EM13CO22) Produzir e publicar conteúdo como textos, imagens, áudios, vídeos e suas associações, bem como ferramentas para sua integração, organização e apresentação, utilizando diferentes mídias digitais.",
           },
           {
-            title: "2ª série",
+            title: "2ª Série",
             description:
               "Objeto de conhecimento: Cidadania digital, autoria criativa, ética e propriedade intelectual\nCompetência: Produzir e comunicar conteúdos digitais com ética, autoria e propósito social.\nHabilidade: (NavEM13CO15) Criar campanhas digitais e narrativas sociais.\nHabilidade: (NavEM13CO16) Usar plataformas colaborativas de criação, aplicando o jornalismo cidadão.\nHabilidade: (NavEM13CO17) Aplicar princípios de direitos autorais e licenças abertas em tempos de Inteligência Artificial.\nHabilidade: (EM13CO24) Identificar e reconhecer como as redes sociais e artefatos computacionais em geral interferem na saúde física e mental de seus usuários.",
           },
           {
-            title: "3ª série",
+            title: "3ª Série",
             description:
               "Objeto de conhecimento: Educação midiática responsável\nCompetência: Atuar de forma autônoma, criativa e ética no ecossistema digital contemporâneo.\nHabilidade: (EM13CO25) Dialogar em ambientes virtuais com segurança e respeito às diferenças culturais e pessoais, reconhecendo e denunciando atitudes abusivas.\nHabilidade: (NavEM13CO26) Produzir projetos transmídia, com Inteligência Artificial e storytelling interativo, que impliquem ações digitais de impacto social.\nHabilidade: (EM13CO26) Aplicar os conceitos e pressupostos do direito digital em sua conduta e experiências com o cotidiano da cultura digital, bem como na produção e uso de artefatos computacionais.",
           },
@@ -525,17 +525,17 @@ const CURRICULUM_DATA: Record<string, any> = {
         type: "detailed",
         items: [
           {
-            title: "1ª série",
+            title: "1ª Série",
             description:
               "Objeto de conhecimento: Design thinking e resolução de problemas\nCompetência: Aplicar o ciclo de design thinking para criar soluções inovadoras e funcionais.\nHabilidade:  (NavEM13CO09) Refinar e abstrair problemas reais, planejando soluções de forma criativa e colaborativa.\nHabilidade: (NavEM13CO10) Aplicar ferramentas de ideação e prototipagem digital (como Tinkercad, Canva, Figma ou SketchUp).\nHabilidade: (NavEM13CO11) Usar a fabricação digital para testar ideias e validar soluções.\nHabilidade: (NavEM13CO12) Compreender o papel do erro e da experimentação no processo de criação.",
           },
           {
-            title: "2ª série",
+            title: "2ª Série",
             description:
               "Objeto de conhecimento: Tecnologia e fabricação digital\nCompetência: Empregar o ciclo de design de produto em produções autorais.\nHabilidade: (NavEM13CO18) Aplicar ferramentas de fabricação digital.\nHabilidade: (NavEM13CO19) Incorporar IA, RA/RV e IoT em processos de design e prototipagem.\nHabilidade: (NavEM13CO20) Analisar materiais, custo e impacto ambiental de um produto.\nHabilidade: (NavEM13CO21) Trabalhar com dados e métricas para aprimorar a performance de um projeto físico ou digital.",
           },
           {
-            title: "3ª série",
+            title: "3ª Série",
             description:
               "Objeto de conhecimento: Inovação e empreendedorismo\nCompetência: Empreender com inovação e impacto social, por meio da fabricação digital e da inteligência artificial aplicada.\nHabilidade: (NavEM13CO27) Analisar o papel das tecnologias digitais e da Inteligência Artificial no mundo do trabalho e na inovação social.\nHabilidade: (NavEM13CO28) Conhecer os fundamentos da Inteligência Artificial e utilizá-la para aprimorar produtos e processos criativos.\nHabilidade: (NavEM13CO29) Desenvolver MVPs (produtos mínimos viáveis) com fabricação digital, automação e Inteligência Artificial aplicada.\nHabilidade: (NavEM13CO30) Criar projetos de empreendedorismo, considerando sustentabilidade e ética tecnológica.",
           },

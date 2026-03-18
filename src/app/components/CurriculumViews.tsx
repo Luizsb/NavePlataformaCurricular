@@ -59,7 +59,7 @@ const EF1_YEARS = ["Todos", "1º Ano", "2º Ano", "3º Ano", "4º Ano", "5º Ano
 
 const EF2_YEARS = ["Todos", "6º Ano", "7º Ano", "8º Ano", "9º Ano"];
 
-const EM_YEARS = ["Todos", "1ª série", "2ª série", "3ª série"];
+const EM_YEARS = ["Todos", "1ª Série", "2ª Série", "3ª Série"];
 
 const CopyButton = ({
   text,
