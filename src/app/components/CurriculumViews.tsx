@@ -463,7 +463,7 @@ export const CurriculumLibraryView: React.FC<CurriculumLibraryViewProps> = ({
                     colors.lightText,
                   )}
                 >
-                  Eixo Estruturante
+                  Eixos Estruturantes
                 </span>
                 <h2
                   className={cn(

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { cn } from './ui/utils';
 import Nave from '../../imports/Nave';
+// @ts-ignore
 import logoPng from '../../assets/BCCINaV-01.png';
 import { Menu, X, ChevronRight, Download } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
