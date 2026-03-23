@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { cn } from './ui/utils';
 import Nave from '../../imports/Nave';
+import logoPng from '../../assets/BCCINaV-01.png';
 import { Menu, X, ChevronRight, Download } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -29,7 +30,8 @@ export const Header: React.FC<HeaderProps> = ({ activePage, setActivePage, onOpe
           onClick={() => setActivePage('general')}
         >
           <div className="w-[120px] lg:w-[180px] aspect-[204/64] flex items-center">
-            <Nave />
+            {/* <Nave /> */}
+            <img src={logoPng} alt="Logo Nave a Vela" className="h-full w-auto object-contain" />
           </div>
         </div>
 
