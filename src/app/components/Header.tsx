@@ -29,7 +29,7 @@ export const Header: React.FC<HeaderProps> = ({ activePage, setActivePage, onOpe
           className="flex cursor-pointer items-center h-10 lg:h-12 shrink-0"
           onClick={() => setActivePage('general')}
         >
-          <div className="w-[120px] lg:w-[180px] aspect-[204/64] flex items-center">
+          <div className="w-[150px] lg:w-[220px] aspect-[204/64] flex items-center">
             {/* <Nave /> */}
             <img src={logoPng} alt="Logo Nave a Vela" className="h-full w-auto object-contain" />
           </div>
