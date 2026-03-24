@@ -264,7 +264,7 @@ export const GlobalExportModal: React.FC<GlobalExportModalProps> = ({
           doc.setTextColor(231, 96, 159);
           doc.text('Nave a Vela + BNCC', margin, yPos);
           yPos += 6;
-          addText('Competências Gerais da BNCC Computação', 14, 'bold', [27, 44, 73], 4);
+          addText('Competências Gerais da BNCC da Computação', 14, 'bold', [27, 44, 73], 4);
           data.generalCompetencies.forEach((comp: { title: string; description: string }) => {
             checkPageBreak(20);
             addText(comp.title, 11, 'bold', [27, 44, 73], 2);

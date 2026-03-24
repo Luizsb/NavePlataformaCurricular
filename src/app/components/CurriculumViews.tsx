@@ -51,7 +51,7 @@ const AXES = [
 const FILTER_CATEGORIES = [
   { id: "Todos", label: "Todos", icon: LayoutGrid },
   { id: "Eixo Estruturante", label: "Eixo Estruturante", icon: Compass },
-  { id: "BNCC Computação", label: "BNCC Computação", icon: BookOpen },
+  { id: "BNCC Computação", label: "BNCC da Computação", icon: BookOpen },
   { id: "Habilidades do Século XXI", label: "Habilidades do Século XXI", icon: Trophy },
 ] as const;
 
@@ -802,7 +802,7 @@ export const CurriculumLibraryView: React.FC<CurriculumLibraryViewProps> = ({
               Nave a Vela + BNCC
             </span>
             <h2 className="text-[28px] md:text-[32px] font-black text-[#1B2C49] tracking-tight leading-tight">
-              Competências Gerais da BNCC Computação
+              Competências Gerais da BNCC da Computação
             </h2>
           </div>
           <CopyButton

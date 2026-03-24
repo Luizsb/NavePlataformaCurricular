@@ -516,7 +516,7 @@ const CURRICULUM_DATA: Record<string, any> = {
           {
             title: "3ª Série",
             description:
-              "Objeto de conhecimento: Educação midiática responsável\nCompetência: Atuar de forma autônoma, criativa e ética no ecossistema digital contemporâneo.\nHabilidade: (EM13CO25) Dialogar em ambientes virtuais com segurança e respeito às diferenças culturais e pessoais, reconhecendo e denunciando atitudes abusivas.\nHabilidade: (NavEM13CO26) Produzir projetos transmídia, com Inteligência Artificial e storytelling interativo, que impliquem ações digitais de impacto social.\nHabilidade: (EM13CO26) Aplicar os conceitos e pressupostos do direito digital em sua conduta e experiências com o cotidiano da cultura digital, bem como na produção e uso de artefatos computacionais.",
+              "Objeto de conhecimento: Educação midiática responsável\nCompetência: Atuar de forma autônoma, criativa e ética no ecossistema digital contemporâneo.\nHabilidade: (EM13CO25) Dialogar em ambientes virtuais com segurança e respeito às diferenças culturais e pessoais, reconhecendo e denunciando atitudes abusivas.\nHabilidade: (EM13CO26) Aplicar os conceitos e pressupostos do direito digital em sua conduta e experiências com o cotidiano da cultura digital, bem como na produção e uso de artefatos computacionais.\nHabilidade: (NavEM13CO26) Produzir projetos transmídia, com Inteligência Artificial e storytelling interativo, que impliquem ações digitais de impacto social.",
           },
         ],
       },
