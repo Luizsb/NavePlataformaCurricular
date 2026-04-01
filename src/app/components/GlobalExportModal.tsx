@@ -20,6 +20,7 @@ const EXPORT_OPTIONS = [
   { id: 'ef1', label: 'Anos Iniciais (EF1)', icon: GraduationCap, color: '#E7609F' },
   { id: 'ef2', label: 'Anos Finais (EF2)', icon: School, color: '#4C76BA' },
   { id: 'em', label: 'Ensino Médio', icon: Binary, color: '#3D1D3D' },
+  { id: 'programmatic', label: 'Conteúdo Programático', icon: FileText, color: '#E7609F' },
 ];
 
 const SEGMENT_FILE_NAMES: Record<string, string> = {
@@ -28,6 +29,7 @@ const SEGMENT_FILE_NAMES: Record<string, string> = {
   ef1: 'Anos_Iniciais_EF1',
   ef2: 'Anos_Finais_EF2',
   em: 'Ensino_Medio',
+  programmatic: 'Conteudo_Programatico',
 };
 
 function getExportFileName(selectedIds: string[]): string {
@@ -252,6 +254,40 @@ export const GlobalExportModal: React.FC<GlobalExportModalProps> = ({
                 }
               });
             }
+          });
+        }
+
+        // Conteúdo Programático: Projetos
+        if (id === 'programmatic' && data.projects && Array.isArray(data.projects)) {
+          data.projects.forEach((project: any) => {
+            yPos += 5;
+            checkPageBreak(40);
+            
+            // Título do Projeto
+            addText(project.tema, 14, 'bold', [231, 96, 159], 3);
+            
+            // Ano e Eixos
+            const subInfo = `${project.year} | ${project.axes.join(', ')}`;
+            addText(subInfo, 10, 'bold', [76, 118, 186], 2);
+            
+            // Contexto
+            if (project.contexto) {
+              addText('Contexto:', 9, 'bold', [27, 44, 73], 1);
+              addText(project.contexto, 10, 'normal', [80, 80, 90], 3);
+            }
+            
+            // Protótipo e Recursos
+            addText('Protótipo: ' + project.prototipo, 10, 'bold', [27, 44, 73], 1);
+            addText('Recursos: ' + project.recursos, 10, 'normal', [80, 80, 90], 3);
+            
+            // Competências
+            addText('Competências BCCI:', 9, 'bold', [27, 44, 73], 1);
+            addText(project.competenciasBCCI, 10, 'italic', [80, 80, 90], 4);
+            
+            yPos += 5;
+            doc.setDrawColor(241, 238, 249);
+            doc.line(margin, yPos, pageWidth - margin, yPos);
+            yPos += 5;
           });
         }
 

@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "../styles/theme.css";
 import { Header } from "./components/Header";
 import { CurriculumLibraryView } from "./components/CurriculumViews";
+import { ProgrammaticContentPage } from "../modules/programmatic-content/components/ProgrammaticContentPage";
+import { PROGRAMMATIC_DATA } from "../modules/programmatic-content/data/programmatic-content.data";
 import { Toaster } from "sonner";
 import { GlobalExportModal } from "./components/GlobalExportModal";
 
@@ -568,11 +570,15 @@ export default function App() {
         onOpenExportModal={() => setIsExportModalOpen(true)}
       />
 
-      <CurriculumLibraryView
-        data={data}
-        stage={activePage}
-        onStageChange={handleStageChange}
-      />
+      {activePage === "programmatic-content" ? (
+        <ProgrammaticContentPage />
+      ) : (
+        <CurriculumLibraryView
+          data={data}
+          stage={activePage}
+          onStageChange={handleStageChange}
+        />
+      )}
 
       <footer className="bg-white border-t border-zinc-100 py-12">
         <div className="mx-auto max-w-[1100px] px-8 flex flex-col md:flex-row justify-center items-center gap-6">
@@ -585,7 +591,17 @@ export default function App() {
       <GlobalExportModal
         isOpen={isExportModalOpen}
         onClose={() => setIsExportModalOpen(false)}
-        curriculumData={CURRICULUM_DATA}
+        curriculumData={{
+          ...CURRICULUM_DATA,
+          programmatic: {
+            title: "Conteúdo Programático",
+            hero: {
+              tagline: "NAVE À VELA • CONTEÚDO PROGRAMÁTICO",
+              description_blocks: ["Explore projetos e unidades curriculares organizados por ano e eixos temáticos estruturantes."]
+            },
+            projects: PROGRAMMATIC_DATA
+          }
+        }}
       />
     </div>
   );

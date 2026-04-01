@@ -21,11 +21,12 @@ export const Header: React.FC<HeaderProps> = ({ activePage, setActivePage, onOpe
     { id: 'ef1', label: 'Anos iniciais' },
     { id: 'ef2', label: 'Anos finais' },
     { id: 'em', label: 'Ensino médio' },
+    { id: 'programmatic-content', label: 'Conteúdo Programático' },
   ];
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white border-b border-zinc-100">
-      <div className="mx-auto flex h-20 lg:h-24 max-w-[1600px] items-center justify-between px-4 lg:px-10">
+      <div className="mx-auto flex h-20 lg:h-24 max-w-[1600px] items-center justify-between px-4 lg:px-8 gap-0">
         <div 
           className="flex cursor-pointer items-center h-12 lg:h-16 shrink-0"
           onClick={() => setActivePage('general')}
@@ -37,13 +38,13 @@ export const Header: React.FC<HeaderProps> = ({ activePage, setActivePage, onOpe
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-1 px-4">
+        <nav className="hidden lg:flex items-center gap-0 mx-auto">
           {stages.map((s) => (
             <button
               key={s.id}
               onClick={() => setActivePage(s.id)}
               className={cn(
-                "px-6 py-2 rounded-full text-[14px] font-bold transition-all whitespace-nowrap cursor-pointer",
+                "px-2 xl:px-3 py-2 rounded-full text-[13px] xl:text-[14px] font-bold transition-all whitespace-nowrap cursor-pointer",
                 activePage === s.id
                   ? "bg-[#E7609F] text-white shadow-[0px_8px_16px_-4px_rgba(231,96,159,0.3)]"
                   : "text-[#9F9FA9] hover:text-[#1B2C49] hover:bg-zinc-50"
@@ -57,12 +58,12 @@ export const Header: React.FC<HeaderProps> = ({ activePage, setActivePage, onOpe
         {/* Mobile Menu Toggle */}
         <button 
           onClick={() => setIsMenuOpen(true)}
-          className="lg:hidden p-2.5 rounded-xl bg-zinc-50 text-[#1B2C49] cursor-pointer"
+          className="lg:hidden ml-auto p-2.5 rounded-xl bg-zinc-50 text-[#1B2C49] cursor-pointer"
         >
           <Menu className="size-6" />
         </button>
 
-        <div className="hidden xl:flex items-center gap-4 shrink-0">
+        <div className="hidden lg:flex items-center gap-4 shrink-0">
           {onOpenExportModal && (
             <button
               type="button"
