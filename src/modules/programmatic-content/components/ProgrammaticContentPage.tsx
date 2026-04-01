@@ -472,7 +472,7 @@ export const ProgrammaticContentPage: React.FC = () => {
                                   <span className="text-[10px] font-black uppercase tracking-[2px] text-zinc-400">
                                     Contexto
                                   </span>
-                                  <p className="text-[16px] text-[#1B2C49] font-light leading-relaxed">
+                                  <p className="text-[16px] text-[#1B2C49] font-light leading-relaxed whitespace-pre-line">
                                     {project.contexto}
                                   </p>
                                 </div>
@@ -480,9 +480,9 @@ export const ProgrammaticContentPage: React.FC = () => {
                                 <div className="p-6 rounded-[24px] bg-[#f4eff4] border border-[#EAE0EA] space-y-6 shadow-sm">
                                   <div className="space-y-2">
                                     <span className="text-[10px] font-black uppercase tracking-[2px] text-[#94579E]">
-                                      Protótipo / Produto Final
+                                       Protótipo (produto entregável)
                                     </span>
-                                    <p className="text-[18px] font-black text-[#1B2C49]">
+                                    <p className="text-[18px] font-black text-[#1B2C49] whitespace-pre-line">
                                       {project.prototipo}
                                     </p>
                                   </div>
@@ -491,7 +491,7 @@ export const ProgrammaticContentPage: React.FC = () => {
                                     <span className="text-[10px] font-black uppercase tracking-[2px] text-[#94579E]">
                                       Recursos Principais
                                     </span>
-                                    <p className="text-[16px] font-medium text-[#1B2C49]/80">
+                                    <p className="text-[16px] font-medium text-[#1B2C49]/80 whitespace-pre-line">
                                       {project.recursos}
                                     </p>
                                   </div>
@@ -526,7 +526,7 @@ export const ProgrammaticContentPage: React.FC = () => {
                                   <span className="text-[10px] font-black uppercase tracking-[2px] text-zinc-400">
                                     Competências BCCI
                                   </span>
-                                  <p className="text-[15px] text-[#1B2C49]/80 leading-relaxed font-light">
+                                  <p className="text-[15px] text-[#1B2C49]/80 leading-relaxed font-light whitespace-pre-line">
                                     {project.competenciasBCCI}
                                   </p>
                                 </div>
