@@ -42,7 +42,7 @@ export const PROGRAMMATIC_DATA: ProgrammaticProject[] = [
     stage: "ef2",
     year: "6º Ano",
     axes: ["pensamento", "mundo"],
-    tema: "Sustentabilidade e inteligência artificial aplicada",
+    tema: "Sustentabilidade e Inteligência Artificial aplicada",
     contexto:
       "Por meio da construção de um jogo que utiliza reconhecimento de imagens treinadas em Inteligência Artificial, os estudantes exploram sustentabilidade, reciclagem e pensamento computacional.",
     prototipo: "Jogo seletor de lixo com IA",
@@ -57,7 +57,7 @@ export const PROGRAMMATIC_DATA: ProgrammaticProject[] = [
     axes: ["cultura"],
     tema: "Produção midiática com responsabilidade",
     contexto:
-      "Por meio da produção de um podcast educacional, os estudantes exploram os comportamentos digitais que impactam o aprendizado e desenvolvimento de habilidades essenciais para a vida.",
+      "Por meio da produção de um podcast educacional, os estudantes exploram os comportamentos digitais que impactam o aprendizado e o desenvolvimento de habilidades essenciais para a vida.",
     prototipo: "Produção audiovisual",
     recursos: "Google Vids",
     competenciasBCCI:
@@ -83,7 +83,7 @@ export const PROGRAMMATIC_DATA: ProgrammaticProject[] = [
     axes: ["mundo"],
     tema: "Animação interativa",
     contexto:
-      "Por meio da criação de uma animação interativa sobre segurança digital, os estudantes são convidados a investigar problemas reais sobre os riscos da internet. ",
+      "Por meio da criação de uma animação interativa sobre segurança digital, os estudantes são convidados a investigar problemas reais relacionados aos riscos da internet.",
     prototipo: "Animação sobre segurança digital",
     recursos: "Pictoblox",
     competenciasBCCI:
@@ -109,11 +109,11 @@ export const PROGRAMMATIC_DATA: ProgrammaticProject[] = [
     axes: ["pensamento", "design"],
     tema: "Soluções automatizadas para o cotidiano",
     contexto:
-      "Por meio da prototipação de uma estação climática, a proposta leva o estudante à reflexão sobre as mudanças climáticas e soluções simples que podem impactar a economia de recursos em ambientes residenciais e industriais.",
+      "Por meio da prototipação de uma estação climática, a proposta leva o estudante a refletir sobre as mudanças climáticas e as soluções simples que podem impactar a economia de recursos em ambientes residenciais e industriais.",
     prototipo: "Climatização sustentável automatizada",
     recursos: "micro:bit",
     competenciasBCCI:
-      "• Aplicar princípios de design e modelagem digital para criar objetos.\n• Aplicar princípios da programação e suas características para resolução de problemas.\n• Empregar diferentes estratégias da computação para construir a solução de problemas com uso de Inteligência Artificial.\n• Empregar programação em diferentes projetos.\n• Empregar grafos em projetos educativos.\n• Empregar diferentes estratégias da computação.\n• Aplicar princípios de design e modelagem digital para criar objetos.\n• Identificar alternativas durante o ciclo de criação.",
+      "• Aplicar princípios de design e modelagem digital para criar objetos.\n• Aplicar princípios da programação e suas características para resolução de problemas.\n• Empregar diferentes estratégias da computação para construir a solução de problemas com uso de Inteligência Artificial.\n• Empregar programação em diferentes projetos.\n• Empregar grafos em projetos educativos.\n• Empregar diferentes estratégias da computação.\n• Identificar alternativas durante o ciclo de criação.",
   },
   {
     id: "ef2-7-proj4",
@@ -173,7 +173,7 @@ export const PROGRAMMATIC_DATA: ProgrammaticProject[] = [
     year: "8º Ano",
     axes: ["mundo", "cultura"],
     tema: "Ética digital e participação cidadã",
-    contexto: "Por meio da criação de um vídeo, os estudantes exploram a produção de conteúdos na internet e como as Inteligências Artificiais influenciam este cenário.",
+    contexto: "Por meio da criação de um vídeo, os estudantes exploram a produção de conteúdos na internet e como as inteligências artificiais influenciam este cenário.",
     prototipo: "Criação de um vídeo",
     recursos: "Google Vids",
     competenciasBCCI:
@@ -185,7 +185,7 @@ export const PROGRAMMATIC_DATA: ProgrammaticProject[] = [
     year: "9º Ano",
     axes: ["mundo", "cultura"],
     tema: "Segurança digital e criptografia aplicada",
-    contexto: "Por meio da criação de um site, os estudantes exploram sobre segurança digital e tráfego de rede em uma proposta de criar codificações secretas em páginas web. ",
+    contexto: "Por meio da criação de um site, os estudantes exploram segurança digital e tráfego de rede em uma proposta de criar codificações secretas em páginas web.",
     prototipo: "Criação de um site",
     recursos: "Canva",
     competenciasBCCI:
@@ -209,7 +209,7 @@ export const PROGRAMMATIC_DATA: ProgrammaticProject[] = [
     year: "9º Ano",
     axes: ["pensamento", "design"],
     tema: "Inteligência Artificial e saúde preventiva",
-    contexto: "Por meio do desenvolvimento de uma ferramenta de automatização, os estudantes exploram as necessidades básicas humanas e como o desenvolvimento de tecnologias auxiliam a estrutura moderna de sociedade.",
+    contexto: "Por meio do desenvolvimento de uma ferramenta de automatização, os estudantes exploram as necessidades básicas humanas e como o desenvolvimento de tecnologias auxilia a estrutura moderna de sociedade.",
     prototipo: "Criação de um projeto de alertas",
     recursos: "Arduino e Pictoblox",
     competenciasBCCI:
@@ -221,7 +221,7 @@ export const PROGRAMMATIC_DATA: ProgrammaticProject[] = [
     year: "9º Ano",
     axes: ["cultura"],
     tema: "Cidadania digital e combate à desinformação",
-    contexto: "Por meio da criação de múltiplos objetos digitais, multiplataformas, os estudantes organizam um site com informações relevantes sobre fake news em tom de alerta para a sociedade.",
+    contexto: "Por meio da criação de diferentes objetos digitais multiplataforma, os estudantes organizam um site com informações relevantes sobre fake news, em tom de alerta para a sociedade.",
     prototipo: "Criação de objetos digitais",
     recursos: "Google Sites",
     competenciasBCCI:
@@ -259,11 +259,11 @@ export const PROGRAMMATIC_DATA: ProgrammaticProject[] = [
     stage: "em",
     year: "1ª Série",
     axes: ["mundo", "cultura"],
-    tema: "Soluções para promoção da cidadania digital",
+    tema: "Arte em Bits e Bytes",
     contexto:
-      "Por meio da construção de um aplicativo com apoio de Inteligência Artificial, os estudantes desenvolvem e publicam conteúdos em ambientes virtuais, avaliando criticamente sua confiabilidade e relevância, com foco em promover a cidadania digital (fontes de informação, dados digitais, fake news, bolhas informacionais etc).",
-    prototipo: "Criação de aplicativo",
-    recursos: "Canva Code AI",
+      "Por meio da arte digital, os estudantes exploram como funciona a linguagem da máquina ao interpretar imagens, partindo dos bits e bytes, passando por deepfakes e finalizando o protótipo em uma interação com IAs capazes de gerar novas padronizações em animações. ",
+    prototipo: "Arte Digital",
+    recursos: "Canva e Google Vids",
     competenciasBCCI:
       "• Elaborar e testar programas utilizando linguagens textuais, analisando os princípios básicos de Inteligência Artificial.\n• Desenvolver projetos para investigar desafios do mundo empregando a programação e simulação, podendo introduzir Inteligência Artificial.\n• Analisar criticamente informações e narrativas digitais, reconhecendo influências sociais e culturais.",
   },
@@ -272,11 +272,11 @@ export const PROGRAMMATIC_DATA: ProgrammaticProject[] = [
     stage: "em",
     year: "1ª Série",
     axes: ["mundo", "cultura"],
-    tema: "Design Thinking aplicado a produtos",
+    tema: "Design thinking em campanhas digitais",
     contexto:
-      "Ao aprofundar a situação-problema e observar o uso do aplicativo, os estudantes aplicam o Design Thinking para refinar a proposta e desenvolver uma campanha digital, utilizando Canva Code AI, Canva e Google Sites para fortalecer e disseminar o propósito de cidadania digital.",
+      "Ao aprofundar a situação-problema da deepfake, os estudantes elaboram uma campanha digital de conscientização, explorando temas sensíveis com o público por meio da criação de um site e de objetos digitais interativos.",
     prototipo: "Criação de campanha",
-    recursos: "Canva Sites",
+    recursos: "Canva Code IA e Google Sites",
     competenciasBCCI:
       "• Elaborar e testar programas utilizando linguagens textuais, analisando os princípios básicos de Inteligência Artificial.\n• Desenvolver projetos para investigar desafios do mundo empregando a programação e simulação, podendo introduzir Inteligência Artificial.\n• Analisar criticamente informações e narrativas digitais, reconhecendo influências sociais e culturais.",
   },
@@ -285,11 +285,11 @@ export const PROGRAMMATIC_DATA: ProgrammaticProject[] = [
     stage: "em",
     year: "2ª Série",
     axes: ["cultura", "design"],
-    tema: "Empreendedorismo para criação de startups",
+    tema: "Jogos de tabuleiro e Game Design",
     contexto:
-      "Por meio da estruturação de uma Startup, os estudantes exploram os temas sensíveis que permeiam a cultura digital com proposta de intervenção social no planejamento de jogos de tabuleiro.",
+      "Por meio da criação de um MVP de jogo de tabuleiro, os estudantesexploram como a gamificação pode sensibilizar para a compreensão da relação humano–rede.",
     prototipo: "Criação de jogos educativos",
-    recursos: "Canva e materiais não estruturados",
+    recursos: "NotebookLM, Canva e Materiais não estruturados",
     competenciasBCCI:
       "• Produzir e comunicar conteúdos digitais com ética, autoria e propósito social.\n• Empregar o ciclo de design de produto em produções autorais.",
   },
@@ -300,7 +300,7 @@ export const PROGRAMMATIC_DATA: ProgrammaticProject[] = [
     axes: ["cultura", "design"],
     tema: "Design Thinking aplicado a startups",
     contexto:
-      "Ao aprofundar a situação-problema da sociedade atual, em troca constante com o meio digital, os estudantes desenvolvem a estrutura física dos jogos planejados na startup e validam a aplicabilidade da ação.",
+      "Ao aprofundar a situação-problema da sociedade atual, os estudantes, em troca constante com o meio digital, desenvolvem o projeto de uma startup, estruturam fisicamente os jogos planejados e validam a aplicabilidade da ação.",
     prototipo: "Criação de jogos educativos",
     recursos: "Canva e materiais não estruturados",
     competenciasBCCI:
@@ -328,7 +328,7 @@ export const PROGRAMMATIC_DATA: ProgrammaticProject[] = [
     contexto:
       "Ao aprofundar a situação-problema, os estudantes analisam as necessidades do usuário, definem o que faz sentido automatizar e personalizar e implementam conectividade Wi‑Fi ao protótipo. Com isso, exploram fundamentos da internet, análise de dados e tecnologias emergentes para projetar uma casa IoT funcional, usável e eticamente responsável.",
     prototipo: "Criação de uma casa IoT",
-    recursos: "ESP32 e Arduino IDE",
+    recursos: "ESP32, Arduino IDE e App Dabble",
     competenciasBCCI:
       "• Integrar o pensamento computacional ao uso de dados e à automação inteligente, incluindo contextos da Inteligência Artificial.\n• Empregar análise de dados e fundamentos da internet.\n• Utilizar tecnologias emergentes, dados e Inteligência Artificial para projetar produtos digitais funcionais e éticos.",
   },
