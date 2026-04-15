@@ -287,7 +287,7 @@ export const PROGRAMMATIC_DATA: ProgrammaticProject[] = [
     axes: ["cultura", "design"],
     tema: "Jogos de tabuleiro e Game Design",
     contexto:
-      "Por meio da criação de um MVP de jogo de tabuleiro, os estudantesexploram como a gamificação pode sensibilizar para a compreensão da relação humano–rede.",
+      "Por meio da criação de um MVP de jogo de tabuleiro, os estudantes exploram como a gamificação pode sensibilizar para a compreensão da relação humano–rede.",
     prototipo: "Criação de jogos educativos",
     recursos: "NotebookLM, Canva e Materiais não estruturados",
     competenciasBCCI:
