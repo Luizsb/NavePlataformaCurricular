@@ -48,7 +48,7 @@ export const PROGRAMMATIC_DATA: ProgrammaticProject[] = [
     prototipo: "Jogo seletor de lixo com IA",
     recursos: "ML4Kids e Scratch",
     competenciasBCCI:
-      "• Entender como os dados são armazenados, processados e transmitidos usando dispositivos computacionais, considerando aspectos da segurança cibernética.\n• Compreender fundamentos da Inteligência Artificial.\n• Entender e aplicar tecnologias com Inteligência Artificial.\n• Compreender o raciocínio lógico e o funcionamento básico dos algoritmos e sistemas automatizados.\n• Empregar diferentes estratégias da computação (decomposição, generalização e reúso) para construir a solução de problemas, empregando a Inteligência Artificial em determinados contextos.",
+      "• Compreender fundamentos da Inteligência Artificial.\n• Entender e aplicar tecnologias com Inteligência Artificial.\n• Compreender o raciocínio lógico e o funcionamento básico dos algoritmos e sistemas automatizados.\n• Empregar diferentes estratégias da computação (decomposição, generalização e reúso) para construir a solução de problemas, empregando a Inteligência Artificial em determinados contextos.",
   },
   {
     id: "ef2-6-proj3",
@@ -100,7 +100,7 @@ export const PROGRAMMATIC_DATA: ProgrammaticProject[] = [
     prototipo: "Jogo de lixo eletrônico",
     recursos: "Scratch",
     competenciasBCCI:
-      "• Aplicar princípios da programação e suas características para resolução de problemas.\n• Empregar diferentes estratégias da computação para construir a solução de problemas com uso de Inteligência Artificial.\n• Empregar programação em diferentes projetos.\n• Empregar grafos em projetos educativos.\n• Empregar diferentes estratégias da computação.",
+      "• Aplicar princípios da programação e suas características para resolução de problemas.\n• Empregar diferentes estratégias da computação para construir a solução de problemas com uso de Inteligência Artificial.\n• Empregar programação em diferentes projetos.\n• Empregar diferentes estratégias da computação.",
   },
   {
     id: "ef2-7-proj3",
@@ -145,14 +145,14 @@ export const PROGRAMMATIC_DATA: ProgrammaticProject[] = [
     id: "ef2-8-proj2",
     stage: "ef2",
     year: "8º Ano",
-    axes: ["pensamento", "design"],
+    axes: ["pensamento"],
     tema: "Soluções de mobilidade urbana e organização do território",
     contexto:
       "Por meio da construção de um estacionamento inteligente, os estudantes exploram o impacto da alta demanda de carros na sociedade.",
     prototipo: "Estacionamento inteligente",
     recursos: "micro:bit v2 e MakeCode micro:bit ",
     competenciasBCCI:
-      "• Criar um projeto utilizando a programação.\n• Propor melhorias para projetos considerando impactos durante as decisões.",
+      "• Criar um projeto utilizando a programação.",
   },
   {
     id: "ef2-8-proj3",
@@ -189,7 +189,7 @@ export const PROGRAMMATIC_DATA: ProgrammaticProject[] = [
     prototipo: "Criação de um site",
     recursos: "Canva",
     competenciasBCCI:
-      "• Analisar os impactos da Inteligência Artificial e da automação na sociedade contemporânea.\n• Entender que as tecnologias devem ser utilizadas de maneira segura, ética e responsável.\n• Compreender que o meio digital favorece produções éticas.\n• Selecionar e utilizar tecnologias de forma crítica.\n• Explorar o uso de ferramentas de Inteligência Artificial para combater fake news.",
+      "• Analisar os impactos da Inteligência Artificial e da automação na sociedade contemporânea.\n• Entender que as tecnologias devem ser utilizadas de maneira segura, ética e responsável, respeitando direitos autorais, de imagem e as leis vigentes.\n• Explorar o uso de ferramentas de Inteligência Artificial para combater fake news.",
   },
   {
     id: "ef2-9-proj2",
@@ -201,7 +201,7 @@ export const PROGRAMMATIC_DATA: ProgrammaticProject[] = [
     prototipo: "Criação de um aplicativo",
     recursos: "MIT App Inventor",
     competenciasBCCI:
-      "• Construir e analisar soluções computacionais de problemas de diferentes áreas do conhecimento, de forma individual ou colaborativa, selecionando as estruturas de dados adequadas (registros, matrizes, listas e grafos).\n• Criar um projeto utilizando a programação.\n• Considerar a experiência do usuário no processo construtivo de solução.",
+      "• Criar um projeto utilizando a programação.\n• Criar produtos para problemas reais que tenham impacto social.\n• Considerar a experiência do usuário no processo construtivo de solução.",
   },
   {
     id: "ef2-9-proj3",
