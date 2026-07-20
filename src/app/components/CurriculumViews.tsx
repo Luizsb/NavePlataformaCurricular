@@ -884,7 +884,7 @@ export const CurriculumLibraryView: React.FC<CurriculumLibraryViewProps> = ({
               dotColor: "bg-[#94579E]",
             },
             {
-              title: "Qualidades de Caráter",
+              title: "Habilidades Fundamentais",
               subtitle: "Como lidamos com o mundo a nossa volta",
               skills: [
                 "Alfabetização e leitura",
