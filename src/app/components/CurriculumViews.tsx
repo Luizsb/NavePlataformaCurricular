@@ -884,7 +884,7 @@ export const CurriculumLibraryView: React.FC<CurriculumLibraryViewProps> = ({
               dotColor: "bg-[#94579E]",
             },
             {
-              title: "Habilidades Fundamentais",
+              title: "Competências Formação Integral",
               subtitle: "Como lidamos com o mundo a nossa volta",
               skills: [
                 "Alfabetização e leitura",
@@ -928,12 +928,12 @@ export const CurriculumLibraryView: React.FC<CurriculumLibraryViewProps> = ({
             >
               <div
                 className={cn(
-                  "p-8 lg:p-12 pb-6 lg:pb-10 flex flex-col justify-between relative min-h-[180px] lg:min-h-[220px]",
+                  "p-8 lg:p-12 pb-6 lg:pb-10 flex flex-col relative min-h-[200px] lg:min-h-[260px]",
                   cat.color,
                 )}
               >
                 <div className="flex justify-between items-start gap-4">
-                  <h4 className="text-[20px] lg:text-[26px] font-black text-white leading-[1.1] max-w-[200px]">
+                  <h4 className="text-[20px] lg:text-[26px] font-black text-white leading-[1.1] max-w-[200px] min-h-[3.3em]">
                     {cat.title}
                   </h4>
                   <CopyButton
@@ -941,7 +941,7 @@ export const CurriculumLibraryView: React.FC<CurriculumLibraryViewProps> = ({
                     className="bg-white/20 border-white/10 text-white hover:bg-white/30 backdrop-blur-sm p-2 lg:p-3 rounded-xl lg:rounded-2xl"
                   />
                 </div>
-                <p className="text-[13px] lg:text-[15px] text-white/90 font-medium leading-snug mt-4 lg:mt-6">
+                <p className="text-[13px] lg:text-[15px] text-white/90 font-medium leading-snug mt-6 lg:mt-8">
                   {cat.subtitle}
                 </p>
               </div>

@@ -114,7 +114,7 @@ const CURRICULUM_DATA: Record<string, any> = {
         ],
       },
       {
-        title: "Habilidades Fundamentais",
+        title: "Competências Formação Integral",
         subtitle: "Como lidamos com o mundo a nossa volta",
         skills: [
           "Alfabetização e leitura",
