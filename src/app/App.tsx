@@ -4,6 +4,7 @@ import { Header } from "./components/Header";
 import { CurriculumLibraryView } from "./components/CurriculumViews";
 import { ProgrammaticContentPage } from "../modules/programmatic-content/components/ProgrammaticContentPage";
 import { PROGRAMMATIC_DATA } from "../modules/programmatic-content/data/programmatic-content.data";
+import { TechMatrix } from "../modules/tecnologias/components/TechMatrix";
 import { Toaster } from "sonner";
 import { GlobalExportModal } from "./components/GlobalExportModal";
 
@@ -572,6 +573,8 @@ export default function App() {
 
       {activePage === "programmatic-content" ? (
         <ProgrammaticContentPage />
+      ) : activePage === "tecnologias" ? (
+        <TechMatrix />
       ) : (
         <CurriculumLibraryView
           data={data}

@@ -12,8 +12,6 @@ interface HeaderProps {
   onOpenExportModal?: () => void;
 }
 
-const MAPA_APRENDIZAGENS_URL = `${import.meta.env.BASE_URL}pdfs/mapa-de-aprendizagens.pdf`;
-
 export const Header: React.FC<HeaderProps> = ({ activePage, setActivePage, onOpenExportModal }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   
@@ -24,16 +22,8 @@ export const Header: React.FC<HeaderProps> = ({ activePage, setActivePage, onOpe
     { id: 'ef2', label: 'Anos finais' },
     { id: 'em', label: 'Ensino médio' },
     { id: 'programmatic-content', label: 'Conteúdo Programático' },
-    { id: 'mapa-aprendizagens', label: 'Mapa de Aprendizagens', href: MAPA_APRENDIZAGENS_URL },
+    { id: 'tecnologias', label: 'Mapa de Aprendizagens' },
   ];
-
-  const handleNavClick = (item: (typeof stages)[number]) => {
-    if ('href' in item && item.href) {
-      window.open(item.href, '_blank', 'noopener,noreferrer');
-      return;
-    }
-    setActivePage(item.id);
-  };
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white border-b border-zinc-100">
@@ -53,7 +43,7 @@ export const Header: React.FC<HeaderProps> = ({ activePage, setActivePage, onOpe
           {stages.map((s) => (
             <button
               key={s.id}
-              onClick={() => handleNavClick(s)}
+              onClick={() => setActivePage(s.id)}
               className={cn(
                 "px-2 xl:px-3 py-2 rounded-full text-[13px] xl:text-[14px] font-bold transition-all whitespace-nowrap cursor-pointer",
                 activePage === s.id
@@ -120,7 +110,7 @@ export const Header: React.FC<HeaderProps> = ({ activePage, setActivePage, onOpe
                   <button
                     key={s.id}
                     onClick={() => {
-                      handleNavClick(s);
+                      setActivePage(s.id);
                       setIsMenuOpen(false);
                     }}
                     className={cn(
