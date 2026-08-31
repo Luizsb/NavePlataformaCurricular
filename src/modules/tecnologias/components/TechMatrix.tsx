@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ArrowRight, X, GitBranch, Calendar, Copy, CheckCheck, Check } from 'lucide-react';
+import { ArrowRight, X, GitBranch, Calendar, Copy, CheckCheck, Check, Download } from 'lucide-react';
 import { cn } from '../../../app/components/ui/utils';
 
 // ─── Types ─────────────────────────────────────────────────────────────────────
@@ -255,6 +255,9 @@ export const TECH_PROJECTS: TechProject[] = [
 
 const YEARS_EF2 = ['Todos', '6º ano', '7º ano', '8º ano', '9º ano'];
 const YEARS_EM  = ['Todos', '1ª série', '2ª série'];
+
+const MAPA_PDF_URL = `${import.meta.env.BASE_URL}pdfs/mapa-de-tecnologias.pdf`;
+const MAPA_PDF_FILENAME = 'MAPA DE TECNOLOGIAS.pdf';
 
 const CATEGORY_COLORS: Record<Category, { bg: string; text: string; border: string }> = {
   Programação: { bg: '#FFF0F7', text: '#E7609F', border: '#F6B9D4' },
@@ -1348,8 +1351,17 @@ export function TechMatrix() {
                     ))}
                   </motion.div>
                 </AnimatePresence>
-                {activeYear !== 'Todos' && (
-                  <div className="mt-6">
+                <div className="mt-6 flex flex-wrap items-center gap-3">
+                  <a
+                    href={MAPA_PDF_URL}
+                    download={MAPA_PDF_FILENAME}
+                    aria-label="Baixar PDF do Mapa de Tecnologias"
+                    className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full text-[13px] font-black transition-all cursor-pointer border bg-[#4C76BA] text-white border-[#4C76BA] shadow-[0_6px_20px_-4px_rgba(76,118,186,0.35)] hover:bg-[#3b5d94] active:scale-[0.97]"
+                  >
+                    <Download size={14} strokeWidth={2.5} />
+                    Baixar mapa de tecnologias (PDF)
+                  </a>
+                  {activeYear !== 'Todos' && (
                     <button
                       onClick={() => setTrajectoryMode((v) => !v)}
                       className={cn('flex items-center gap-2.5 px-5 py-2.5 rounded-full text-[13px] font-black transition-all cursor-pointer border',
@@ -1361,8 +1373,8 @@ export function TechMatrix() {
                       {trajectoryMode ? <X size={14} strokeWidth={2.5} /> : <GitBranch size={14} strokeWidth={2.5} />}
                       {trajectoryMode ? 'Fechar trajetória' : 'Ver trajetória completa'}
                     </button>
-                  </div>
-                )}
+                  )}
+                </div>
               </div>
             </div>
 
