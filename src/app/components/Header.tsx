@@ -22,7 +22,7 @@ export const Header: React.FC<HeaderProps> = ({ activePage, setActivePage, onOpe
     { id: 'ef2', label: 'Anos finais' },
     { id: 'em', label: 'Ensino médio' },
     { id: 'programmatic-content', label: 'Conteúdo Programático' },
-    { id: 'tecnologias', label: 'Mapa de Aprendizagens' },
+    { id: 'tecnologias', label: 'Mapa de Tecnologias' },
   ];
 
   return (

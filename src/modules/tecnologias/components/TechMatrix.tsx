@@ -1359,7 +1359,7 @@ export function TechMatrix() {
                     className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full text-[13px] font-black transition-all cursor-pointer border bg-[#4C76BA] text-white border-[#4C76BA] shadow-[0_6px_20px_-4px_rgba(76,118,186,0.35)] hover:bg-[#3b5d94] active:scale-[0.97]"
                   >
                     <Download size={14} strokeWidth={2.5} />
-                    Baixar mapa de tecnologias (PDF)
+                    Baixar Mapa de Tecnologias (PDF)
                   </a>
                   {activeYear !== 'Todos' && (
                     <button
