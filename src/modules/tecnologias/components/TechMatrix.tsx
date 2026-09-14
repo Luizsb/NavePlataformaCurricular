@@ -1342,7 +1342,7 @@ export function TechMatrix() {
                   <span className="text-[10px] font-black uppercase tracking-[3px] text-[#1B2C49]">NAVE À VELA • TECNOLOGIAS</span>
                 </div>
                 <h1 className="text-[24px] md:text-[32px] font-black text-[#1B2C49] tracking-tight leading-tight mb-5">
-                  Matriz de Tecnologias
+                Mapa de Tecnologias
                 </h1>
                 <AnimatePresence mode="wait">
                   <motion.div key={activeYear === 'Todos' ? 'todos' : activeLevel} initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -6 }} transition={{ duration: 0.25 }} className="space-y-3 max-w-[600px]">
