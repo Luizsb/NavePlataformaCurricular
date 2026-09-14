@@ -5,8 +5,10 @@
   "type": "module",
   "scripts": {
     "build": "vite build",
+    "build:aws": "vite build --outDir aws-upload --emptyOutDir --base /public/NAVEaVELA/NovaBCCI/Plataforma/",
     "dev": "vite",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "preview:aws": "vite preview --outDir aws-upload"
   },
   "dependencies": {
     "@emotion/react": "11.14.0",

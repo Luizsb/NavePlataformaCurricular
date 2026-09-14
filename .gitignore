@@ -1,5 +1,6 @@
 node_modules/
 dist/
+aws-upload/
 docs/
 .env
 .env.local

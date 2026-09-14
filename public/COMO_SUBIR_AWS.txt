@@ -1,0 +1,25 @@
+================================================================================
+  COMO SUBIR ESTA PASTA NA AWS (Arco)
+================================================================================
+
+Destino:
+  public/NAVEaVELA/NovaBCCI/Plataforma/
+
+URL:
+  https://conteudo-digital.arcotech.io/public/NAVEaVELA/NovaBCCI/Plataforma/index.html
+
+Envie o CONTEÚDO desta pasta (index.html, assets/, pdfs/, nave_ico.png)
+para dentro de Plataforma/. Não envie a pasta aws-upload em si.
+
+
+Policy (já alinhada com essa pasta):
+  arn:aws:s3:::conteudo-digital.arcotech.io/public/NAVEaVELA/NovaBCCI/Plataforma/*
+
+
+Se o CSS/JS der 403, o index.html no ar ainda é o antigo
+(pedindo /assets/ na raiz). Substitua index.html + pasta assets/ e
+abra em aba anônima.
+
+Para gerar esta pasta de novo:
+  npm run build:aws
+================================================================================

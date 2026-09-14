@@ -17,8 +17,9 @@ export default defineConfig({
     },
   },
 
-  // Base: GitHub Pages (/NavePlataformaCurricular/) ou GitLab Pages (/nav/bcci_nav/)
-  base: process.env.VITE_BASE_PATH || '/NavePlataformaCurricular/',
+  // "/" na raiz (Netlify). AWS: npm run build:aws usa --base ./
+  // GitHub Pages (subpasta): VITE_BASE_PATH=/NavePlataformaCurricular/
+  base: process.env.VITE_BASE_PATH || '/',
 
   // File types to support raw imports. Nunca adicione .css, .tsx ou .ts aqui.
   assetsInclude: ['**/*.svg', '**/*.csv'],
